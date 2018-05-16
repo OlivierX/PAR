@@ -1,0 +1,488 @@
+liu@ubuntu:~/Github/p2plua/pix2pix$ DATA_ROOT=./datasets/barchart516 name=barchart_generation which_direction=BtoA gpu=0 cudnn=0 batchSize=1 save_epoch_freq=200 th train.lua
+{
+  cudnn : 0
+  name : "barchart_generation"
+  niter : 200
+  batchSize : 1
+  n_layers_D : 0
+  ndf : 64
+  which_model_netG : "unet"
+  save_display_freq : 5000
+  print_freq : 50
+  gpu : 0
+  use_GAN : 1
+  DATA_ROOT : "./datasets/barchart516"
+  serial_batch_iter : 1
+  use_L1 : 1
+  save_epoch_freq : 200
+  output_nc : 3
+  checkpoints_dir : "./checkpoints"
+  input_nc : 3
+  beta1 : 0.5
+  continue_train : 0
+  which_direction : "BtoA"
+  phase : "train"
+  fineSize : 256
+  condition_GAN : 1
+  loadSize : 286
+  lambda : 100
+  ngf : 64
+  preprocess : "regular"
+  which_model_netD : "basic"
+  display : 1
+  display_freq : 100
+  display_id : 10
+  flip : 1
+  ntrain : inf
+  lr : 0.0002
+  nThreads : 2
+  display_plot : "errL1"
+  save_latest_freq : 5000
+  serial_batches : 0
+}
+Random Seed: 1498	
+#threads...2	
+Starting donkey with id: 2 seed: 1500
+table: 0x40817c30
+Starting donkey with id: 1 seed: 1499
+table: 0x4119c618
+./datasets/barchart516
+./datasets/barchart516
+trainCache	/home/liu/Github/p2plua/pix2pix/cache/_home_liu_Github_p2plua_pix2pix_datasets_barchart516_train_trainCache.t7
+Creating train metadata
+serial batch:, 	0
+table: 0x4162c348
+running "find" on each class directory, and concatenate all those filenames into a single file containing all image paths for a given class
+trainCache	/home/liu/Github/p2plua/pix2pix/cache/_home_liu_Github_p2plua_pix2pix_datasets_barchart516_train_trainCache.t7
+Creating train metadata
+serial batch:, 	0
+table: 0x4129ad50
+running "find" on each class directory, and concatenate all those filenames into a single file containing all image paths for a given class
+now combine all the files to a single large file
+now combine all the files to a single large file
+load the large concatenated list of sample paths to self.imagePath
+cmd..wc -L '/tmp/lua_hSQreG' |cut -f1 -d' '
+load the large concatenated list of sample paths to self.imagePath
+cmd..wc -L '/tmp/lua_CTCUUB' |cut -f1 -d' '
+ [............................. ......................................]         24 samples found. 0ms 
+Updating classList and imageClass appropriately
+24 samples found.
+Updating classList and imageClass appropriately
+ [========================================================>]                       1/1  ========== Tot: 1ms |  Tot: 1ms | Step: 1ms              
+ 1/1 
+Cleaning up temporary files
+Cleaning up temporary files
+Dataset Size: 	24	
+define model netG...	
+define model netD...	
+nn.gModule
+nn.Sequential {
+  [input -> (1) -> (2) -> (3) -> (4) -> (5) -> (6) -> (7) -> (8) -> (9) -> (10) -> (11) -> (12) -> (13) -> output]
+  (1): nn.SpatialConvolution(6 -> 64, 4x4, 2,2, 1,1)
+  (2): nn.LeakyReLU(0.2)
+  (3): nn.SpatialConvolution(64 -> 128, 4x4, 2,2, 1,1)
+  (4): nn.SpatialBatchNormalization (4D) (128)
+  (5): nn.LeakyReLU(0.2)
+  (6): nn.SpatialConvolution(128 -> 256, 4x4, 2,2, 1,1)
+  (7): nn.SpatialBatchNormalization (4D) (256)
+  (8): nn.LeakyReLU(0.2)
+  (9): nn.SpatialConvolution(256 -> 512, 4x4, 1,1, 1,1)
+  (10): nn.SpatialBatchNormalization (4D) (512)
+  (11): nn.LeakyReLU(0.2)
+  (12): nn.SpatialConvolution(512 -> 1, 4x4, 1,1, 1,1)
+  (13): nn.Sigmoid
+}
+running model on CPU	
+End of epoch 1 / 200 	 Time Taken: 85.997	
+End of epoch 2 / 200 	 Time Taken: 88.956	
+Epoch: [3][       1 /       24]	 Time: 3.509  DataTime: 0.001    Err_G: 1.2486  Err_D: 0.3547  ErrL1: 0.3040	
+End of epoch 3 / 200 	 Time Taken: 95.232	
+End of epoch 4 / 200 	 Time Taken: 144.729	
+Epoch: [5][       3 /       24]	 Time: 5.538  DataTime: 0.001    Err_G: 3.2503  Err_D: 0.0368  ErrL1: 0.3530	
+End of epoch 5 / 200 	 Time Taken: 97.481	
+End of epoch 6 / 200 	 Time Taken: 159.878	
+Epoch: [7][       5 /       24]	 Time: 9.187  DataTime: 0.001    Err_G: 1.2610  Err_D: 0.4342  ErrL1: 0.2722	
+End of epoch 7 / 200 	 Time Taken: 189.706	
+End of epoch 8 / 200 	 Time Taken: 233.442	
+Epoch: [9][       7 /       24]	 Time: 5.652  DataTime: 0.001    Err_G: 0.7256  Err_D: 0.6884  ErrL1: 0.2508	
+End of epoch 9 / 200 	 Time Taken: 121.427	
+End of epoch 10 / 200 	 Time Taken: 98.882	
+Epoch: [11][       9 /       24]	 Time: 3.577  DataTime: 0.001    Err_G: 2.5981  Err_D: 0.0714  ErrL1: 0.6745	
+End of epoch 11 / 200 	 Time Taken: 100.560	
+End of epoch 12 / 200 	 Time Taken: 109.925	
+Epoch: [13][      11 /       24]	 Time: 4.389  DataTime: 0.001    Err_G: 3.9022  Err_D: 0.0183  ErrL1: 0.3011	
+End of epoch 13 / 200 	 Time Taken: 102.484	
+End of epoch 14 / 200 	 Time Taken: 99.007	
+Epoch: [15][      13 /       24]	 Time: 4.059  DataTime: 0.001    Err_G: 1.9111  Err_D: 0.1127  ErrL1: 0.4296	
+End of epoch 15 / 200 	 Time Taken: 95.826	
+End of epoch 16 / 200 	 Time Taken: 104.586	
+Epoch: [17][      15 /       24]	 Time: 4.510  DataTime: 0.001    Err_G: 2.9276  Err_D: 0.0661  ErrL1: 0.2385	
+End of epoch 17 / 200 	 Time Taken: 101.040	
+End of epoch 18 / 200 	 Time Taken: 104.790	
+Epoch: [19][      17 /       24]	 Time: 3.567  DataTime: 0.013    Err_G: 1.5961  Err_D: 0.4731  ErrL1: 0.1264	
+End of epoch 19 / 200 	 Time Taken: 103.508	
+End of epoch 20 / 200 	 Time Taken: 97.567	
+Epoch: [21][      19 /       24]	 Time: 5.323  DataTime: 0.001    Err_G: 2.3162  Err_D: 0.2947  ErrL1: 0.2185	
+End of epoch 21 / 200 	 Time Taken: 100.699	
+End of epoch 22 / 200 	 Time Taken: 114.452	
+Epoch: [23][      21 /       24]	 Time: 3.573  DataTime: 0.001    Err_G: 3.1460  Err_D: 0.0589  ErrL1: 0.2756	
+End of epoch 23 / 200 	 Time Taken: 103.841	
+End of epoch 24 / 200 	 Time Taken: 105.681	
+Epoch: [25][      23 /       24]	 Time: 5.627  DataTime: 0.005    Err_G: 0.9593  Err_D: 0.3821  ErrL1: 0.6400	
+End of epoch 25 / 200 	 Time Taken: 102.996	
+End of epoch 26 / 200 	 Time Taken: 106.915	
+End of epoch 27 / 200 	 Time Taken: 100.808	
+Epoch: [28][       1 /       24]	 Time: 4.114  DataTime: 0.002    Err_G: 2.0552  Err_D: 0.1419  ErrL1: 0.2730	
+End of epoch 28 / 200 	 Time Taken: 111.871	
+End of epoch 29 / 200 	 Time Taken: 101.151	
+Epoch: [30][       3 /       24]	 Time: 4.325  DataTime: 0.001    Err_G: 1.7515  Err_D: 0.3651  ErrL1: 0.2264	
+End of epoch 30 / 200 	 Time Taken: 105.244	
+End of epoch 31 / 200 	 Time Taken: 109.476	
+Epoch: [32][       5 /       24]	 Time: 3.804  DataTime: 0.001    Err_G: 3.7529  Err_D: 0.0263  ErrL1: 0.1973	
+End of epoch 32 / 200 	 Time Taken: 99.631	
+End of epoch 33 / 200 	 Time Taken: 102.711	
+Epoch: [34][       7 /       24]	 Time: 5.690  DataTime: 0.001    Err_G: 3.6461  Err_D: 0.0280  ErrL1: 0.2115	
+End of epoch 34 / 200 	 Time Taken: 106.407	
+End of epoch 35 / 200 	 Time Taken: 108.568	
+Epoch: [36][       9 /       24]	 Time: 3.822  DataTime: 0.001    Err_G: 3.0250  Err_D: 0.0330  ErrL1: 0.3593	
+End of epoch 36 / 200 	 Time Taken: 113.999	
+End of epoch 37 / 200 	 Time Taken: 100.819	
+Epoch: [38][      11 /       24]	 Time: 5.024  DataTime: 0.000    Err_G: 4.5386  Err_D: 0.0224  ErrL1: 0.1956	
+End of epoch 38 / 200 	 Time Taken: 117.261	
+End of epoch 39 / 200 	 Time Taken: 105.049	
+Epoch: [40][      13 /       24]	 Time: 3.760  DataTime: 0.000    Err_G: 4.2234  Err_D: 0.0155  ErrL1: 0.2938	
+End of epoch 40 / 200 	 Time Taken: 117.493	
+End of epoch 41 / 200 	 Time Taken: 103.038	
+Epoch: [42][      15 /       24]	 Time: 5.231  DataTime: 0.000    Err_G: 3.1508  Err_D: 0.3030  ErrL1: 0.1475	
+End of epoch 42 / 200 	 Time Taken: 103.964	
+End of epoch 43 / 200 	 Time Taken: 147.406	
+Epoch: [44][      17 /       24]	 Time: 3.694  DataTime: 0.001    Err_G: 4.4120  Err_D: 0.0189  ErrL1: 0.2298	
+End of epoch 44 / 200 	 Time Taken: 184.274	
+End of epoch 45 / 200 	 Time Taken: 131.258	
+Epoch: [46][      19 /       24]	 Time: 5.143  DataTime: 0.001    Err_G: 4.4174  Err_D: 0.0094  ErrL1: 0.1687	
+End of epoch 46 / 200 	 Time Taken: 152.498	
+End of epoch 47 / 200 	 Time Taken: 116.495	
+Epoch: [48][      21 /       24]	 Time: 3.501  DataTime: 0.001    Err_G: 3.6171  Err_D: 0.1667  ErrL1: 0.2533	
+End of epoch 48 / 200 	 Time Taken: 119.329	
+End of epoch 49 / 200 	 Time Taken: 101.611	
+Epoch: [50][      23 /       24]	 Time: 6.980  DataTime: 0.001    Err_G: 1.8046  Err_D: 0.1241  ErrL1: 0.2549	
+End of epoch 50 / 200 	 Time Taken: 99.369	
+End of epoch 51 / 200 	 Time Taken: 116.269	
+End of epoch 52 / 200 	 Time Taken: 109.985	
+Epoch: [53][       1 /       24]	 Time: 3.655  DataTime: 0.001    Err_G: 3.7333  Err_D: 0.1899  ErrL1: 0.2236	
+End of epoch 53 / 200 	 Time Taken: 102.333	
+End of epoch 54 / 200 	 Time Taken: 189.707	
+Epoch: [55][       3 /       24]	 Time: 6.307  DataTime: 0.001    Err_G: 2.8205  Err_D: 0.0339  ErrL1: 0.3033	
+End of epoch 55 / 200 	 Time Taken: 126.210	
+End of epoch 56 / 200 	 Time Taken: 139.853	
+Epoch: [57][       5 /       24]	 Time: 3.905  DataTime: 0.001    Err_G: 2.2473  Err_D: 0.0742  ErrL1: 0.1943	
+End of epoch 57 / 200 	 Time Taken: 112.121	
+End of epoch 58 / 200 	 Time Taken: 114.092	
+Epoch: [59][       7 /       24]	 Time: 5.438  DataTime: 0.108    Err_G: 2.2049  Err_D: 0.0726  ErrL1: 0.2436	
+End of epoch 59 / 200 	 Time Taken: 107.344	
+End of epoch 60 / 200 	 Time Taken: 104.079	
+										Epoch: [61][       9 /       24]	 Time: 3.619  DataTime: 0.001    Err_G: 2.5197  Err_D: 0.6708  ErrL1: 0.1522	
+										End of epoch 61 / 200 	 Time Taken: 146.419	
+										End of epoch 62 / 200 	 Time Taken: 129.521	
+										Epoch: [63][      11 /       24]	 Time: 6.181  DataTime: 0.001    Err_G: 3.1139  Err_D: 0.0931  ErrL1: 0.1180	
+										End of epoch 63 / 200 	 Time Taken: 151.882	
+										End of epoch 64 / 200 	 Time Taken: 108.323	
+										Epoch: [65][      13 /       24]	 Time: 4.265  DataTime: 0.001    Err_G: 1.6957  Err_D: 0.2403  ErrL1: 0.1426	
+										End of epoch 65 / 200 	 Time Taken: 120.682	
+										End of epoch 66 / 200 	 Time Taken: 133.895	
+										Epoch: [67][      15 /       24]	 Time: 6.428  DataTime: 0.001    Err_G: 3.2100  Err_D: 0.1300  ErrL1: 0.2105	
+										End of epoch 67 / 200 	 Time Taken: 109.703	
+										End of epoch 68 / 200 	 Time Taken: 102.065	
+										Epoch: [69][      17 /       24]	 Time: 3.631  DataTime: 0.001    Err_G: 4.6973  Err_D: 0.2132  ErrL1: 0.2134	
+										End of epoch 69 / 200 	 Time Taken: 111.012	
+										End of epoch 70 / 200 	 Time Taken: 108.033	
+										Epoch: [71][      19 /       24]	 Time: 5.558  DataTime: 0.003    Err_G: 3.2154  Err_D: 0.2074  ErrL1: 0.2170	
+										End of epoch 71 / 200 	 Time Taken: 116.117	
+										End of epoch 72 / 200 	 Time Taken: 111.808	
+										Epoch: [73][      21 /       24]	 Time: 3.706  DataTime: 0.001    Err_G: 4.1630  Err_D: 0.2651  ErrL1: 0.2535	
+										End of epoch 73 / 200 	 Time Taken: 103.851	
+										End of epoch 74 / 200 	 Time Taken: 105.386	
+										Epoch: [75][      23 /       24]	 Time: 5.230  DataTime: 0.000    Err_G: 1.4783  Err_D: 0.3851  ErrL1: 0.2696	
+End of epoch 75 / 200 	 Time Taken: 123.952	
+										End of epoch 76 / 200 	 Time Taken: 140.739	
+										End of epoch 77 / 200 	 Time Taken: 141.533	
+										Epoch: [78][       1 /       24]	 Time: 3.577  DataTime: 0.001    Err_G: 1.1856  Err_D: 0.3088  ErrL1: 0.1327	
+										End of epoch 78 / 200 	 Time Taken: 116.219	
+										End of epoch 79 / 200 	 Time Taken: 133.065	
+										Epoch: [80][       3 /       24]	 Time: 5.088  DataTime: 0.001    Err_G: 2.0357  Err_D: 0.0950  ErrL1: 0.2968	
+										End of epoch 80 / 200 	 Time Taken: 112.507	
+										End of epoch 81 / 200 	 Time Taken: 111.742	
+										Epoch: [82][       5 /       24]	 Time: 3.685  DataTime: 0.001    Err_G: 2.4223  Err_D: 0.1772  ErrL1: 0.1886	
+										End of epoch 82 / 200 	 Time Taken: 107.140	
+										End of epoch 83 / 200 	 Time Taken: 106.305	
+										Epoch: [84][       7 /       24]	 Time: 4.284  DataTime: 0.001    Err_G: 0.2426  Err_D: 0.8850  ErrL1: 0.2534	
+										End of epoch 84 / 200 	 Time Taken: 114.825	
+										End of epoch 85 / 200 	 Time Taken: 108.181	
+										Epoch: [86][       9 /       24]	 Time: 3.741  DataTime: 0.001    Err_G: 3.1371  Err_D: 0.1105  ErrL1: 0.2083	
+										End of epoch 86 / 200 	 Time Taken: 110.809	
+										End of epoch 87 / 200 	 Time Taken: 101.563	
+										Epoch: [88][      11 /       24]	 Time: 5.529  DataTime: 0.001    Err_G: 2.0600  Err_D: 0.2190  ErrL1: 0.1853	
+										End of epoch 88 / 200 	 Time Taken: 118.292	
+										End of epoch 89 / 200 	 Time Taken: 110.338	
+										Epoch: [90][      13 /       24]	 Time: 3.580  DataTime: 0.001    Err_G: 2.0475  Err_D: 0.1723  ErrL1: 0.2080	
+										End of epoch 90 / 200 	 Time Taken: 106.667	
+										End of epoch 91 / 200 	 Time Taken: 108.362	
+										Epoch: [92][      15 /       24]	 Time: 8.994  DataTime: 0.001    Err_G: 2.1476  Err_D: 0.2201  ErrL1: 0.1391	
+										End of epoch 92 / 200 	 Time Taken: 113.676	
+										End of epoch 93 / 200 	 Time Taken: 110.115	
+										Epoch: [94][      17 /       24]	 Time: 3.543  DataTime: 0.001    Err_G: 1.2797  Err_D: 0.2349  ErrL1: 0.1095	
+										End of epoch 94 / 200 	 Time Taken: 120.076	
+										End of epoch 95 / 200 	 Time Taken: 131.187	
+										Epoch: [96][      19 /       24]	 Time: 6.302  DataTime: 0.001    Err_G: 4.3916  Err_D: 0.0288  ErrL1: 0.2165	
+										End of epoch 96 / 200 	 Time Taken: 117.640	
+										End of epoch 97 / 200 	 Time Taken: 125.764	
+										Epoch: [98][      21 /       24]	 Time: 3.601  DataTime: 0.001    Err_G: 4.2182  Err_D: 0.4723  ErrL1: 0.2045	
+										End of epoch 98 / 200 	 Time Taken: 108.265	
+										End of epoch 99 / 200 	 Time Taken: 120.067	
+										Epoch: [100][      23 /       24]	 Time: 4.633  DataTime: 0.000    Err_G: 1.2035  Err_D: 0.3416  ErrL1: 0.0574	
+End of epoch 100 / 200 	 Time Taken: 131.612	
+										End of epoch 101 / 200 	 Time Taken: 152.489	
+										End of epoch 102 / 200 	 Time Taken: 150.967	
+										Epoch: [103][       1 /       24]	 Time: 4.597  DataTime: 0.001    Err_G: 3.9817  Err_D: 0.0288  ErrL1: 0.2422	
+										End of epoch 103 / 200 	 Time Taken: 124.116	
+										End of epoch 104 / 200 	 Time Taken: 119.929	
+										Epoch: [105][       3 /       24]	 Time: 5.460  DataTime: 0.001    Err_G: 3.8154  Err_D: 0.8381  ErrL1: 0.1951	
+										End of epoch 105 / 200 	 Time Taken: 110.446	
+										End of epoch 106 / 200 	 Time Taken: 142.205	
+										Epoch: [107][       5 /       24]	 Time: 3.892  DataTime: 0.001    Err_G: 0.9907  Err_D: 0.4097  ErrL1: 0.2548	
+										End of epoch 107 / 200 	 Time Taken: 112.152	
+										End of epoch 108 / 200 	 Time Taken: 113.984	
+										Epoch: [109][       7 /       24]	 Time: 6.706  DataTime: 0.001    Err_G: 1.1793  Err_D: 0.4024  ErrL1: 0.2733	
+										End of epoch 109 / 200 	 Time Taken: 125.472	
+										End of epoch 110 / 200 	 Time Taken: 116.522	
+										Epoch: [111][       9 /       24]	 Time: 3.830  DataTime: 0.001    Err_G: 3.8400  Err_D: 0.1592  ErrL1: 0.2654	
+										End of epoch 111 / 200 	 Time Taken: 125.422	
+										End of epoch 112 / 200 	 Time Taken: 121.841	
+										Epoch: [113][      11 /       24]	 Time: 5.265  DataTime: 0.001    Err_G: 0.7629  Err_D: 0.4627  ErrL1: 0.1654	
+										End of epoch 113 / 200 	 Time Taken: 132.419	
+										End of epoch 114 / 200 	 Time Taken: 134.308	
+										Epoch: [115][      13 /       24]	 Time: 3.963  DataTime: 0.001    Err_G: 3.4966  Err_D: 0.0602  ErrL1: 0.1183	
+										End of epoch 115 / 200 	 Time Taken: 123.079	
+										End of epoch 116 / 200 	 Time Taken: 130.669	
+										Epoch: [117][      15 /       24]	 Time: 5.880  DataTime: 0.001    Err_G: 0.3687  Err_D: 0.7403  ErrL1: 0.1101	
+										End of epoch 117 / 200 	 Time Taken: 111.657	
+										End of epoch 118 / 200 	 Time Taken: 140.717	
+										Epoch: [119][      17 /       24]	 Time: 3.965  DataTime: 0.001    Err_G: 0.7308  Err_D: 0.5301  ErrL1: 0.1627	
+										End of epoch 119 / 200 	 Time Taken: 116.013	
+										End of epoch 120 / 200 	 Time Taken: 129.447	
+										Epoch: [121][      19 /       24]	 Time: 5.934  DataTime: 0.002    Err_G: 0.4339  Err_D: 0.7048  ErrL1: 0.1080	
+										End of epoch 121 / 200 	 Time Taken: 117.118	
+										End of epoch 122 / 200 	 Time Taken: 143.359	
+										Epoch: [123][      21 /       24]	 Time: 3.594  DataTime: 0.001    Err_G: 6.2302  Err_D: 0.0327  ErrL1: 0.4702	
+										End of epoch 123 / 200 	 Time Taken: 117.448	
+										End of epoch 124 / 200 	 Time Taken: 138.536	
+										Epoch: [125][      23 /       24]	 Time: 7.037  DataTime: 0.001    Err_G: 2.8056  Err_D: 0.0589  ErrL1: 0.2007	
+End of epoch 125 / 200 	 Time Taken: 111.835	
+										End of epoch 126 / 200 	 Time Taken: 115.883	
+										End of epoch 127 / 200 	 Time Taken: 108.161	
+										Epoch: [128][       1 /       24]	 Time: 4.212  DataTime: 0.001    Err_G: 2.4532  Err_D: 0.1156  ErrL1: 0.2227	
+										End of epoch 128 / 200 	 Time Taken: 117.991	
+										End of epoch 129 / 200 	 Time Taken: 119.732	
+										Epoch: [130][       3 /       24]	 Time: 6.129  DataTime: 0.001    Err_G: 3.0353  Err_D: 0.1827  ErrL1: 0.2374	
+										End of epoch 130 / 200 	 Time Taken: 112.248	
+										End of epoch 131 / 200 	 Time Taken: 105.325	
+										Epoch: [132][       5 /       24]	 Time: 3.621  DataTime: 0.001    Err_G: 4.8550  Err_D: 0.7541  ErrL1: 0.1472	
+										End of epoch 132 / 200 	 Time Taken: 106.944	
+										End of epoch 133 / 200 	 Time Taken: 128.832	
+										Epoch: [134][       7 /       24]	 Time: 5.133  DataTime: 0.002    Err_G: 3.8742  Err_D: 0.4865  ErrL1: 0.1734	
+										End of epoch 134 / 200 	 Time Taken: 156.117	
+										End of epoch 135 / 200 	 Time Taken: 111.703	
+										Epoch: [136][       9 /       24]	 Time: 4.370  DataTime: 0.001    Err_G: 4.5582  Err_D: 0.2539  ErrL1: 0.1579	
+										End of epoch 136 / 200 	 Time Taken: 125.537	
+										End of epoch 137 / 200 	 Time Taken: 117.614	
+										Epoch: [138][      11 /       24]	 Time: 4.951  DataTime: 0.000    Err_G: 0.6715  Err_D: 0.4921  ErrL1: 0.2495	
+										End of epoch 138 / 200 	 Time Taken: 142.377	
+										End of epoch 139 / 200 	 Time Taken: 190.021	
+										Epoch: [140][      13 /       24]	 Time: 3.746  DataTime: 0.001    Err_G: 0.5663  Err_D: 0.7189  ErrL1: 0.2039	
+										End of epoch 140 / 200 	 Time Taken: 201.262	
+										End of epoch 141 / 200 	 Time Taken: 165.636	
+										Epoch: [142][      15 /       24]	 Time: 9.774  DataTime: 0.001    Err_G: 2.1764  Err_D: 0.2930  ErrL1: 0.0921	
+										End of epoch 142 / 200 	 Time Taken: 156.114	
+										End of epoch 143 / 200 	 Time Taken: 132.657	
+										Epoch: [144][      17 /       24]	 Time: 3.636  DataTime: 0.001    Err_G: 5.5425  Err_D: 0.0239  ErrL1: 0.3364	
+										End of epoch 144 / 200 	 Time Taken: 141.836	
+										End of epoch 145 / 200 	 Time Taken: 122.337	
+										Epoch: [146][      19 /       24]	 Time: 5.007  DataTime: 0.001    Err_G: 0.3959  Err_D: 0.7594  ErrL1: 0.1738	
+										End of epoch 146 / 200 	 Time Taken: 204.838	
+										End of epoch 147 / 200 	 Time Taken: 171.507	
+										Epoch: [148][      21 /       24]	 Time: 3.657  DataTime: 0.017    Err_G: 4.0053  Err_D: 0.0206  ErrL1: 0.3041	
+										End of epoch 148 / 200 	 Time Taken: 141.049	
+										End of epoch 149 / 200 	 Time Taken: 189.858	
+Epoch: [150][      23 /       24]	 Time: 5.654  DataTime: 0.001    Err_G: 1.5136  Err_D: 0.2960  ErrL1: 0.0932	
+End of epoch 150 / 200 	 Time Taken: 307.972	
+End of epoch 151 / 200 	 Time Taken: 89.651	
+End of epoch 152 / 200 	 Time Taken: 86.832	
+Epoch: [153][       1 /       24]	 Time: 3.498  DataTime: 0.001    Err_G: 1.5251  Err_D: 0.2121  ErrL1: 0.1065	
+End of epoch 153 / 200 	 Time Taken: 88.705	
+End of epoch 154 / 200 	 Time Taken: 86.152	
+Epoch: [155][       3 /       24]	 Time: 4.805  DataTime: 0.001    Err_G: 0.6728  Err_D: 0.5053  ErrL1: 0.0405	
+End of epoch 155 / 200 	 Time Taken: 88.523	
+End of epoch 156 / 200 	 Time Taken: 89.771	
+Epoch: [157][       5 /       24]	 Time: 3.594  DataTime: 0.002    Err_G: 0.2017  Err_D: 1.2474  ErrL1: 0.0499	
+End of epoch 157 / 200 	 Time Taken: 89.691	
+End of epoch 158 / 200 	 Time Taken: 86.415	
+Epoch: [159][       7 /       24]	 Time: 4.662  DataTime: 0.001    Err_G: 2.9927  Err_D: 0.0614  ErrL1: 0.1422	
+End of epoch 159 / 200 	 Time Taken: 88.480	
+End of epoch 160 / 200 	 Time Taken: 87.721	
+Epoch: [161][       9 /       24]	 Time: 3.654  DataTime: 0.001    Err_G: 1.3080  Err_D: 0.3303  ErrL1: 0.0896	
+End of epoch 161 / 200 	 Time Taken: 86.816	
+End of epoch 162 / 200 	 Time Taken: 87.676	
+Epoch: [163][      11 /       24]	 Time: 4.494  DataTime: 0.001    Err_G: 1.7540  Err_D: 0.2335  ErrL1: 0.1591	
+End of epoch 163 / 200 	 Time Taken: 94.702	
+End of epoch 164 / 200 	 Time Taken: 88.470	
+Epoch: [165][      13 /       24]	 Time: 3.655  DataTime: 0.001    Err_G: 4.0830  Err_D: 0.5367  ErrL1: 0.1464	
+End of epoch 165 / 200 	 Time Taken: 87.078	
+End of epoch 166 / 200 	 Time Taken: 86.547	
+Epoch: [167][      15 /       24]	 Time: 4.896  DataTime: 0.000    Err_G: 2.6067  Err_D: 0.2524  ErrL1: 0.1707	
+End of epoch 167 / 200 	 Time Taken: 88.171	
+End of epoch 168 / 200 	 Time Taken: 86.788	
+Epoch: [169][      17 /       24]	 Time: 3.588  DataTime: 0.001    Err_G: 3.1382  Err_D: 0.0502  ErrL1: 0.0858	
+End of epoch 169 / 200 	 Time Taken: 86.820	
+End of epoch 170 / 200 	 Time Taken: 86.788	
+Epoch: [171][      19 /       24]	 Time: 4.371  DataTime: 0.001    Err_G: 1.9106  Err_D: 0.3890  ErrL1: 0.0506	
+End of epoch 171 / 200 	 Time Taken: 87.897	
+End of epoch 172 / 200 	 Time Taken: 86.589	
+Epoch: [173][      21 /       24]	 Time: 3.645  DataTime: 0.001    Err_G: 1.9975  Err_D: 0.1312  ErrL1: 0.1287	
+End of epoch 173 / 200 	 Time Taken: 87.050	
+End of epoch 174 / 200 	 Time Taken: 86.488	
+Epoch: [175][      23 /       24]	 Time: 4.138  DataTime: 0.004    Err_G: 4.3617  Err_D: 0.0170  ErrL1: 0.1268	
+End of epoch 175 / 200 	 Time Taken: 87.521	
+End of epoch 176 / 200 	 Time Taken: 86.572	
+End of epoch 177 / 200 	 Time Taken: 86.842	
+Epoch: [178][       1 /       24]	 Time: 3.592  DataTime: 0.001    Err_G: 0.2812  Err_D: 1.2771  ErrL1: 0.1118	
+End of epoch 178 / 200 	 Time Taken: 86.899	
+End of epoch 179 / 200 	 Time Taken: 86.889	
+Epoch: [180][       3 /       24]	 Time: 4.294  DataTime: 0.001    Err_G: 4.3583  Err_D: 0.0147  ErrL1: 0.3089	
+End of epoch 180 / 200 	 Time Taken: 87.661	
+End of epoch 181 / 200 	 Time Taken: 86.658	
+Epoch: [182][       5 /       24]	 Time: 3.610  DataTime: 0.001    Err_G: 2.9004  Err_D: 0.0660  ErrL1: 0.0546	
+End of epoch 182 / 200 	 Time Taken: 86.626	
+End of epoch 183 / 200 	 Time Taken: 86.772	
+Epoch: [184][       7 /       24]	 Time: 4.272  DataTime: 0.002    Err_G: 5.1143  Err_D: 0.0282  ErrL1: 0.1418	
+End of epoch 184 / 200 	 Time Taken: 87.919	
+End of epoch 185 / 200 	 Time Taken: 86.548	
+Epoch: [186][       9 /       24]	 Time: 3.619  DataTime: 0.001    Err_G: 1.7181  Err_D: 0.4296  ErrL1: 0.1287	
+End of epoch 186 / 200 	 Time Taken: 87.026	
+End of epoch 187 / 200 	 Time Taken: 86.525	
+Epoch: [188][      11 /       24]	 Time: 4.212  DataTime: 0.001    Err_G: 4.2497  Err_D: 0.2756  ErrL1: 0.1866	
+End of epoch 188 / 200 	 Time Taken: 87.525	
+End of epoch 189 / 200 	 Time Taken: 86.517	
+Epoch: [190][      13 /       24]	 Time: 3.609  DataTime: 0.001    Err_G: 2.1203  Err_D: 0.3541  ErrL1: 0.1249	
+End of epoch 190 / 200 	 Time Taken: 86.936	
+End of epoch 191 / 200 	 Time Taken: 86.703	
+Epoch: [192][      15 /       24]	 Time: 4.466  DataTime: 0.001    Err_G: 1.4972  Err_D: 0.1922  ErrL1: 0.0681	
+End of epoch 192 / 200 	 Time Taken: 88.057	
+End of epoch 193 / 200 	 Time Taken: 86.886	
+Epoch: [194][      17 /       24]	 Time: 3.639  DataTime: 0.001    Err_G: 3.3928  Err_D: 0.0263  ErrL1: 0.2942	
+End of epoch 194 / 200 	 Time Taken: 86.990	
+End of epoch 195 / 200 	 Time Taken: 87.404	
+Epoch: [196][      19 /       24]	 Time: 4.174  DataTime: 0.001    Err_G: 2.6245  Err_D: 0.1027  ErrL1: 0.0699	
+End of epoch 196 / 200 	 Time Taken: 87.944	
+End of epoch 197 / 200 	 Time Taken: 86.585	
+Epoch: [198][      21 /       24]	 Time: 3.590  DataTime: 0.001    Err_G: 0.1094  Err_D: 1.5524  ErrL1: 0.0455	
+End of epoch 198 / 200 	 Time Taken: 86.395	
+End of epoch 199 / 200 	 Time Taken: 86.382	
+Epoch: [200][      23 /       24]	 Time: 4.362  DataTime: 0.001    Err_G: 5.6141  Err_D: 0.0074  ErrL1: 0.3144	
+End of epoch 200 / 200 	 Time Taken: 95.028	
+liu@ubuntu:~/Github/p2plua/pix2pix$ DATA_ROOT=./datasets/barchart516 name=barchart_generation which_direction=BtoA gpu=0 cudnn=0 phase=val th test.lua
+{
+  input_nc : 3
+  results_dir : "./results/"
+  name : "barchart_generation"
+  batchSize : 1
+  phase : "val"
+  fineSize : 256
+  aspect_ratio : 1
+  how_many : "all"
+  gpu : 0
+  DATA_ROOT : "./datasets/barchart516"
+  serial_batch_iter : 1
+  preprocess : "regular"
+  nThreads : 1
+  which_epoch : "latest"
+  which_direction : "BtoA"
+  cudnn : 0
+  serial_batches : 1
+  display : 1
+  output_nc : 3
+  loadSize : 256
+  checkpoints_dir : "./checkpoints"
+  display_id : 200
+  flip : 0
+}
+Random Seed: 7377	
+#threads...1	
+Starting donkey with id: 1 seed: 7378
+table: 0x41819dc0
+./datasets/barchart516
+trainCache	/home/liu/Github/p2plua/pix2pix/cache/_home_liu_Github_p2plua_pix2pix_datasets_barchart516_val_trainCache.t7
+Creating train metadata
+serial batch:, 	1
+table: 0x40600958
+running "find" on each class directory, and concatenate all those filenames into a single file containing all image paths for a given class
+now combine all the files to a single large file
+load the large concatenated list of sample paths to self.imagePath
+cmd..wc -L '/tmp/lua_CBR9YV' |cut -f1 -d' '
+12 samples found..... 0/12 .....................] ETA: 0ms | Step: 0ms          
+Updating classList and imageClass appropriately
+ [=================== 1/1 =====================>] Tot: 0ms | Step: 0ms          
+Cleaning up temporary files
+Dataset Size: 	12	
+checkpoints_dir	./checkpoints	
+nn.gModule
+processing batch 1	
+filepaths_curr: 	{
+  1 : "bar_chart_375.png"
+}
+Saved images to: 	/home/liu/Github/p2plua/pix2pix/results/barchart_generation/latest_net_G_val/images	
+Displayed images	
+processing batch 2	
+filepaths_curr: 	{
+  1 : "bar_chart_375.jpg"
+}
+Saved images to: 	/home/liu/Github/p2plua/pix2pix/results/barchart_generation/latest_net_G_val/images	
+Displayed images	
+processing batch 3	
+filepaths_curr: 	{
+  1 : "bar_chart_383.jpg"
+}
+Saved images to: 	/home/liu/Github/p2plua/pix2pix/results/barchart_generation/latest_net_G_val/images	
+Displayed images	
+processing batch 4	
+filepaths_curr: 	{
+  1 : "bar_chart_344.jpg"
+}
+Saved images to: 	/home/liu/Github/p2plua/pix2pix/results/barchart_generation/latest_net_G_val/images	
+Displayed images	
+processing batch 5	
+filepaths_curr: 	{
+  1 : "bar_chart_293.png"
+}
+Saved images to: 	/home/liu/Github/p2plua/pix2pix/results/barchart_generation/latest_net_G_val/images	
+Displayed images	
+processing batch 6	
+filepaths_curr: 	{
+  1 : "bar_chart_381.png"
+}
+Saved images to: 	/home/liu/Github/p2plua/pix2pix/results/barchart_generation/latest_net_G_val/images	
+Displayed images	
+processing batch 7	
+filepaths_curr: 	{
+  1 : "bar_chart_385.jpg"
+}
+Saved images to: 	/home/liu/Github/p2plua/pix2pix/results/barchart_generation/latest_net_G_val/images	
+Displayed images	
+processing batch 8	
+filepaths_curr: 	{
+  1 : "bar_chart_383.png"
+}
+Saved images to: 	/home/liu/Github/p2plua/pix2pix/results/barchart_generation/latest_net_G_val/images	
+Displayed images	
+processing batch 9	
+filepaths_curr: 	{
+
