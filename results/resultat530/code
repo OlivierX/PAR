@@ -1,0 +1,497 @@
+liu@ubuntu:~/Github/p2plua/pix2pix$ DATA_ROOT=./datasets/barbleu name=barbleu_generation which_direction=BtoA gpu=0 cudnn=0 batchSize=3 save_epoch_freq=50 th train.lua
+{
+  cudnn : 0
+  name : "barbleu_generation"
+  niter : 200
+  batchSize : 3
+  n_layers_D : 0
+  ndf : 64
+  which_model_netG : "unet"
+  save_display_freq : 5000
+  print_freq : 1
+  gpu : 0
+  use_GAN : 1
+  DATA_ROOT : "./datasets/barbleu"
+  serial_batch_iter : 1
+  use_L1 : 1
+  save_epoch_freq : 50
+  output_nc : 3
+  checkpoints_dir : "./checkpoints"
+  input_nc : 3
+  beta1 : 0.5
+  continue_train : 0
+  which_direction : "BtoA"
+  phase : "train"
+  fineSize : 256
+  condition_GAN : 1
+  loadSize : 286
+  lambda : 100
+  ngf : 64
+  preprocess : "regular"
+  which_model_netD : "basic"
+  display : 1
+  display_freq : 100
+  display_id : 10
+  flip : 1
+  ntrain : inf
+  lr : 0.0002
+  nThreads : 2
+  display_plot : "errL1"
+  save_latest_freq : 5000
+  serial_batches : 0
+}
+Random Seed: 1069	
+#threads...2	
+Starting donkey with id: 1 seed: 1070
+table: 0x416f2f30
+Starting donkey with id: 2 seed: 1071
+table: 0x4086df40
+./datasets/barbleu
+trainCache	/home/liu/Github/p2plua/pix2pix/cache/_home_liu_Github_p2plua_pix2pix_datasets_barbleu_train_trainCache.t7
+Creating train metadata
+serial batch:, 	0
+table: 0x40cde650
+running "find" on each class directory, and concatenate all those filenames into a single file containing all image paths for a given class
+./datasets/barbleu
+trainCache	/home/liu/Github/p2plua/pix2pix/cache/_home_liu_Github_p2plua_pix2pix_datasets_barbleu_train_trainCache.t7
+Creating train metadata
+serial batch:, 	0
+table: 0x405085d8
+running "find" on each class directory, and concatenate all those filenames into a single file containing all image paths for a given class
+now combine all the files to a single large file
+now combine all the files to a single large file
+load the large concatenated list of sample paths to self.imagePath
+cmd..wc -L '/tmp/lua_fZG42A' |cut -f1 -d' '
+20 samples found..... 0/20 .....................] ETA: 0ms | Step: 0ms          
+Updating classList and imageClass appropriately
+ [=================== 1/1 =====================>] Tot: 0ms | Step: 0ms          
+load the large concatenated list of sample paths to self.imagePath
+cmd..wc -L '/tmp/lua_19DuM9' |cut -f1 -d' '
+Cleaning up temporary files
+20 samples found..... 0/20 .....................] ETA: 0ms | Step: 0ms          
+Updating classList and imageClass appropriately
+ [=================== 1/1 =====================>] Tot: 0ms | Step: 0ms          
+Cleaning up temporary files
+Dataset Size: 	20	
+define model netG...	
+define model netD...	
+nn.gModule
+nn.Sequential {
+  [input -> (1) -> (2) -> (3) -> (4) -> (5) -> (6) -> (7) -> (8) -> (9) -> (10) -> (11) -> (12) -> (13) -> output]
+  (1): nn.SpatialConvolution(6 -> 64, 4x4, 2,2, 1,1)
+  (2): nn.LeakyReLU(0.2)
+  (3): nn.SpatialConvolution(64 -> 128, 4x4, 2,2, 1,1)
+  (4): nn.SpatialBatchNormalization (4D) (128)
+  (5): nn.LeakyReLU(0.2)
+  (6): nn.SpatialConvolution(128 -> 256, 4x4, 2,2, 1,1)
+  (7): nn.SpatialBatchNormalization (4D) (256)
+  (8): nn.LeakyReLU(0.2)
+  (9): nn.SpatialConvolution(256 -> 512, 4x4, 1,1, 1,1)
+  (10): nn.SpatialBatchNormalization (4D) (512)
+  (11): nn.LeakyReLU(0.2)
+  (12): nn.SpatialConvolution(512 -> 1, 4x4, 1,1, 1,1)
+  (13): nn.Sigmoid
+}
+running model on CPU	
+Epoch: [1][       0 /        6]	 Time: 3.248  DataTime: 0.000    Err_G: 0.4487  Err_D: 0.8789  ErrL1: 1.0115	
+Epoch: [1][       1 /        6]	 Time: 2.877  DataTime: 0.004    Err_G: 0.8722  Err_D: 0.7537  ErrL1: 0.9713	
+Epoch: [1][       2 /        6]	 Time: 2.843  DataTime: 0.000    Err_G: 1.0680  Err_D: 0.7962  ErrL1: 0.9422	
+Epoch: [1][       3 /        6]	 Time: 2.860  DataTime: 0.001    Err_G: 1.3704  Err_D: 0.9333  ErrL1: 0.9051	
+Epoch: [1][       4 /        6]	 Time: 2.863  DataTime: 0.000    Err_G: 1.1832  Err_D: 0.5479  ErrL1: 0.8822	
+Epoch: [1][       5 /        6]	 Time: 2.871  DataTime: 0.000    Err_G: 1.2346  Err_D: 0.5209  ErrL1: 0.8383	
+Epoch: [1][       6 /        6]	 Time: 2.813  DataTime: 0.000    Err_G: 1.2280  Err_D: 0.4967  ErrL1: 0.8247	
+End of epoch 1 / 200 	 Time Taken: 61.308	
+Epoch: [2][       0 /        6]	 Time: 58.293  DataTime: 0.042    Err_G: 1.2980  Err_D: 0.4099  ErrL1: 0.7736	
+Epoch: [2][       1 /        6]	 Time: 8.030  DataTime: 0.220    Err_G: 1.2838  Err_D: 0.4395  ErrL1: 0.7561	
+Epoch: [2][       2 /        6]	 Time: 3.605  DataTime: 0.000    Err_G: 1.3044  Err_D: 0.4078  ErrL1: 0.7342	
+Epoch: [2][       3 /        6]	 Time: 3.746  DataTime: 0.000    Err_G: 1.4422  Err_D: 0.3744  ErrL1: 0.6811	
+Epoch: [2][       4 /        6]	 Time: 3.495  DataTime: 0.000    Err_G: 1.6264  Err_D: 0.3322  ErrL1: 0.6991	
+Epoch: [2][       5 /        6]	 Time: 3.360  DataTime: 0.000    Err_G: 1.6385  Err_D: 0.2698  ErrL1: 0.6429	
+Epoch: [2][       6 /        6]	 Time: 3.511  DataTime: 0.000    Err_G: 1.6223  Err_D: 0.3164  ErrL1: 0.6064	
+End of epoch 2 / 200 	 Time Taken: 253.000	
+Epoch: [3][       0 /        6]	 Time: 53.096  DataTime: 0.038    Err_G: 1.4279  Err_D: 0.3739  ErrL1: 0.5943	
+Epoch: [3][       1 /        6]	 Time: 7.087  DataTime: 0.342    Err_G: 1.8364  Err_D: 0.5865  ErrL1: 0.6040	
+Epoch: [3][       2 /        6]	 Time: 2.988  DataTime: 0.011    Err_G: 0.8017  Err_D: 0.5146  ErrL1: 0.5700	
+Epoch: [3][       3 /        6]	 Time: 2.956  DataTime: 0.000    Err_G: 1.6894  Err_D: 0.4757  ErrL1: 0.5253	
+Epoch: [3][       4 /        6]	 Time: 2.939  DataTime: 0.001    Err_G: 1.4368  Err_D: 0.4638  ErrL1: 0.5060	
+Epoch: [3][       5 /        6]	 Time: 2.995  DataTime: 0.000    Err_G: 1.9925  Err_D: 0.4652  ErrL1: 0.4596	
+Epoch: [3][       6 /        6]	 Time: 2.927  DataTime: 0.000    Err_G: 2.1568  Err_D: 0.4428  ErrL1: 0.4564	
+End of epoch 3 / 200 	 Time Taken: 225.861	
+Epoch: [4][       0 /        6]	 Time: 50.079  DataTime: 0.031    Err_G: 1.5685  Err_D: 0.2668  ErrL1: 0.4180	
+Epoch: [4][       1 /        6]	 Time: 9.253  DataTime: 0.266    Err_G: 1.5374  Err_D: 0.3010  ErrL1: 0.4383	
+Epoch: [4][       2 /        6]	 Time: 5.160  DataTime: 0.001    Err_G: 1.5331  Err_D: 0.3915  ErrL1: 0.4240	
+Epoch: [4][       3 /        6]	 Time: 4.444  DataTime: 0.001    Err_G: 1.7571  Err_D: 0.2297  ErrL1: 0.3901	
+Epoch: [4][       4 /        6]	 Time: 4.089  DataTime: 0.055    Err_G: 1.6154  Err_D: 0.2772  ErrL1: 0.4198	
+Epoch: [4][       5 /        6]	 Time: 3.960  DataTime: 0.001    Err_G: 2.2326  Err_D: 0.2982  ErrL1: 0.4095	
+Epoch: [4][       6 /        6]	 Time: 4.502  DataTime: 0.001    Err_G: 0.7959  Err_D: 0.4953  ErrL1: 0.3680	
+End of epoch 4 / 200 	 Time Taken: 246.569	
+Epoch: [5][       0 /        6]	 Time: 53.092  DataTime: 0.030    Err_G: 2.2387  Err_D: 1.1347  ErrL1: 0.3525	
+Epoch: [5][       1 /        6]	 Time: 9.328  DataTime: 0.343    Err_G: 1.3784  Err_D: 0.7238  ErrL1: 0.3337	
+Epoch: [5][       2 /        6]	 Time: 5.284  DataTime: 0.031    Err_G: 0.7001  Err_D: 0.6270  ErrL1: 0.3658	
+Epoch: [5][       3 /        6]	 Time: 3.005  DataTime: 0.000    Err_G: 0.6457  Err_D: 0.6246  ErrL1: 0.3212	
+Epoch: [5][       4 /        6]	 Time: 3.615  DataTime: 0.016    Err_G: 0.9402  Err_D: 0.5685  ErrL1: 0.2739	
+Epoch: [5][       5 /        6]	 Time: 3.840  DataTime: 0.000    Err_G: 1.2456  Err_D: 0.6502  ErrL1: 0.2920	
+Epoch: [5][       6 /        6]	 Time: 3.652  DataTime: 0.000    Err_G: 1.4837  Err_D: 1.0208  ErrL1: 0.2928	
+End of epoch 5 / 200 	 Time Taken: 248.125	
+Epoch: [6][       0 /        6]	 Time: 50.768  DataTime: 0.052    Err_G: 1.3569  Err_D: 0.7690  ErrL1: 0.2534	
+Epoch: [6][       1 /        6]	 Time: 10.353  DataTime: 0.221    Err_G: 1.1282  Err_D: 0.5395  ErrL1: 0.2563	
+Epoch: [6][       2 /        6]	 Time: 5.559  DataTime: 0.044    Err_G: 0.9906  Err_D: 0.4921  ErrL1: 0.2332	
+Epoch: [6][       3 /        6]	 Time: 3.343  DataTime: 0.007    Err_G: 1.1298  Err_D: 0.4764  ErrL1: 0.2434	
+Epoch: [6][       4 /        6]	 Time: 3.373  DataTime: 0.000    Err_G: 1.2820  Err_D: 0.4467  ErrL1: 0.2500	
+Epoch: [6][       5 /        6]	 Time: 3.291  DataTime: 0.000    Err_G: 1.0519  Err_D: 0.4141  ErrL1: 0.2193	
+Epoch: [6][       6 /        6]	 Time: 3.890  DataTime: 0.001    Err_G: 1.4538  Err_D: 0.3884  ErrL1: 0.2184	
+End of epoch 6 / 200 	 Time Taken: 242.866	
+Epoch: [7][       0 /        6]	 Time: 60.002  DataTime: 0.048    Err_G: 0.6203  Err_D: 0.6125  ErrL1: 0.1915	
+Epoch: [7][       1 /        6]	 Time: 10.389  DataTime: 0.224    Err_G: 2.0911  Err_D: 0.8107  ErrL1: 0.1851	
+Epoch: [7][       2 /        6]	 Time: 5.433  DataTime: 0.034    Err_G: 1.1694  Err_D: 0.5005  ErrL1: 0.1709	
+Epoch: [7][       3 /        6]	 Time: 4.193  DataTime: 0.015    Err_G: 0.8199  Err_D: 0.6614  ErrL1: 0.1679	
+Epoch: [7][       4 /        6]	 Time: 4.771  DataTime: 0.000    Err_G: 1.1428  Err_D: 0.5352  ErrL1: 0.1652	
+Epoch: [7][       5 /        6]	 Time: 3.689  DataTime: 0.014    Err_G: 1.7020  Err_D: 0.6977  ErrL1: 0.1751	
+Epoch: [7][       6 /        6]	 Time: 4.419  DataTime: 0.007    Err_G: 1.0617  Err_D: 0.4985  ErrL1: 0.1852	
+End of epoch 7 / 200 	 Time Taken: 280.027	
+Epoch: [8][       0 /        6]	 Time: 64.092  DataTime: 0.029    Err_G: 0.7211  Err_D: 0.5189  ErrL1: 0.1418	
+Epoch: [8][       1 /        6]	 Time: 7.463  DataTime: 0.125    Err_G: 1.7455  Err_D: 0.6344  ErrL1: 0.1656	
+Epoch: [8][       2 /        6]	 Time: 5.661  DataTime: 0.031    Err_G: 0.9040  Err_D: 0.4615  ErrL1: 0.1775	
+Epoch: [8][       3 /        6]	 Time: 3.603  DataTime: 0.000    Err_G: 1.1642  Err_D: 0.4380  ErrL1: 0.1373	
+Epoch: [8][       4 /        6]	 Time: 3.079  DataTime: 0.001    Err_G: 1.6130  Err_D: 0.4418  ErrL1: 0.1491	
+Epoch: [8][       5 /        6]	 Time: 4.477  DataTime: 0.001    Err_G: 0.3826  Err_D: 0.8160  ErrL1: 0.1456	
+Epoch: [8][       6 /        6]	 Time: 4.409  DataTime: 0.007    Err_G: 1.9513  Err_D: 0.6047  ErrL1: 0.1483	
+End of epoch 8 / 200 	 Time Taken: 279.412	
+Epoch: [9][       0 /        6]	 Time: 61.335  DataTime: 0.022    Err_G: 1.3391  Err_D: 0.4871  ErrL1: 0.1269	
+Epoch: [9][       1 /        6]	 Time: 8.340  DataTime: 0.477    Err_G: 0.8001  Err_D: 0.5007  ErrL1: 0.1206	
+Epoch: [9][       2 /        6]	 Time: 5.018  DataTime: 0.046    Err_G: 1.8981  Err_D: 0.7173  ErrL1: 0.1463	
+Epoch: [9][       3 /        6]	 Time: 4.287  DataTime: 0.006    Err_G: 0.7575  Err_D: 0.5251  ErrL1: 0.1135	
+Epoch: [9][       4 /        6]	 Time: 4.366  DataTime: 0.001    Err_G: 1.0533  Err_D: 0.4560  ErrL1: 0.1370	
+Epoch: [9][       5 /        6]	 Time: 3.942  DataTime: 0.000    Err_G: 1.5982  Err_D: 0.5563  ErrL1: 0.0997	
+Epoch: [9][       6 /        6]	 Time: 3.034  DataTime: 0.000    Err_G: 0.4998  Err_D: 0.6516  ErrL1: 0.1311	
+End of epoch 9 / 200 	 Time Taken: 276.505	
+Epoch: [10][       0 /        6]	 Time: 59.793  DataTime: 0.232    Err_G: 1.9451  Err_D: 0.6853  ErrL1: 0.1631	
+Epoch: [10][       1 /        6]	 Time: 11.135  DataTime: 0.367    Err_G: 1.2262  Err_D: 0.5182  ErrL1: 0.0978	
+Epoch: [10][       2 /        6]	 Time: 5.994  DataTime: 0.039    Err_G: 0.5340  Err_D: 0.6031  ErrL1: 0.1505	
+Epoch: [10][       3 /        6]	 Time: 4.176  DataTime: 0.000    Err_G: 1.2628  Err_D: 0.4834  ErrL1: 0.1122	
+Epoch: [10][       4 /        6]	 Time: 4.071  DataTime: 0.000    Err_G: 1.4177  Err_D: 0.5133  ErrL1: 0.1066	
+Epoch: [10][       5 /        6]	 Time: 4.241  DataTime: 0.029    Err_G: 0.7867  Err_D: 0.4995  ErrL1: 0.0966	
+Epoch: [10][       6 /        6]	 Time: 3.815  DataTime: 0.000    Err_G: 1.3327  Err_D: 0.4931  ErrL1: 0.1005	
+End of epoch 10 / 200 	 Time Taken: 281.055	
+Epoch: [11][       0 /        6]	 Time: 77.441  DataTime: 0.006    Err_G: 1.1862  Err_D: 0.4779  ErrL1: 0.1022	
+Epoch: [11][       1 /        6]	 Time: 11.645  DataTime: 0.834    Err_G: 1.0513  Err_D: 0.4474  ErrL1: 0.0849	
+Epoch: [11][       2 /        6]	 Time: 5.837  DataTime: 0.004    Err_G: 1.7230  Err_D: 0.5153  ErrL1: 0.0775	
+Epoch: [11][       3 /        6]	 Time: 4.996  DataTime: 0.051    Err_G: 0.3504  Err_D: 0.7628  ErrL1: 0.0820	
+Epoch: [11][       4 /        6]	 Time: 4.952  DataTime: 0.007    Err_G: 1.8419  Err_D: 0.5976  ErrL1: 0.0746	
+Epoch: [11][       5 /        6]	 Time: 4.161  DataTime: 0.000    Err_G: 1.2873  Err_D: 0.4615  ErrL1: 0.0801	
+Epoch: [11][       6 /        6]	 Time: 4.110  DataTime: 0.000    Err_G: 1.0397  Err_D: 0.4616  ErrL1: 0.1210	
+End of epoch 11 / 200 	 Time Taken: 340.609	
+Epoch: [12][       0 /        6]	 Time: 59.293  DataTime: 0.047    Err_G: 1.1633  Err_D: 0.4546  ErrL1: 0.0877	
+Epoch: [12][       1 /        6]	 Time: 7.429  DataTime: 0.091    Err_G: 1.4831  Err_D: 0.4495  ErrL1: 0.0781	
+Epoch: [12][       2 /        6]	 Time: 3.662  DataTime: 0.017    Err_G: 0.6142  Err_D: 0.5600  ErrL1: 0.0761	
+Epoch: [12][       3 /        6]	 Time: 3.929  DataTime: 0.000    Err_G: 2.0710  Err_D: 0.6216  ErrL1: 0.0776	
+Epoch: [12][       4 /        6]	 Time: 3.384  DataTime: 0.011    Err_G: 1.0766  Err_D: 0.4490  ErrL1: 0.0675	
+Epoch: [12][       5 /        6]	 Time: 3.157  DataTime: 0.000    Err_G: 0.7883  Err_D: 0.4996  ErrL1: 0.0977	
+Epoch: [12][       6 /        6]	 Time: 3.617  DataTime: 0.000    Err_G: 1.7449  Err_D: 0.5235  ErrL1: 0.0702	
+End of epoch 12 / 200 	 Time Taken: 254.677	
+Epoch: [13][       0 /        6]	 Time: 57.409  DataTime: 0.034    Err_G: 0.9099  Err_D: 0.4363  ErrL1: 0.0813	
+Epoch: [13][       1 /        6]	 Time: 10.461  DataTime: 0.264    Err_G: 1.3163  Err_D: 0.3978  ErrL1: 0.0594	
+Epoch: [13][       2 /        6]	 Time: 5.036  DataTime: 0.000    Err_G: 1.2929  Err_D: 0.3344  ErrL1: 0.0736	
+Epoch: [13][       3 /        6]	 Time: 3.434  DataTime: 0.028    Err_G: 1.7317  Err_D: 0.3352  ErrL1: 0.0726	
+Epoch: [13][       4 /        6]	 Time: 4.208  DataTime: 0.000    Err_G: 0.7845  Err_D: 0.4801  ErrL1: 0.0579	
+Epoch: [13][       5 /        6]	 Time: 4.929  DataTime: 0.001    Err_G: 2.3648  Err_D: 0.7203  ErrL1: 0.0601	
+Epoch: [13][       6 /        6]	 Time: 3.091  DataTime: 0.000    Err_G: 1.0753  Err_D: 0.4734  ErrL1: 0.0561	
+End of epoch 13 / 200 	 Time Taken: 266.641	
+Epoch: [14][       0 /        6]	 Time: 60.166  DataTime: 0.074    Err_G: 0.9519  Err_D: 0.4905  ErrL1: 0.0566	
+Epoch: [14][       1 /        6]	 Time: 11.438  DataTime: 0.213    Err_G: 1.9064  Err_D: 0.6220  ErrL1: 0.0692	
+Epoch: [14][       2 /        6]	 Time: 5.320  DataTime: 0.000    Err_G: 1.1177  Err_D: 0.4675  ErrL1: 0.0521	
+Epoch: [14][       3 /        6]	 Time: 3.759  DataTime: 0.001    Err_G: 1.2071  Err_D: 0.3853  ErrL1: 0.0547	
+Epoch: [14][       4 /        6]	 Time: 3.189  DataTime: 0.009    Err_G: 1.5915  Err_D: 0.3479  ErrL1: 0.0703	
+Epoch: [14][       5 /        6]	 Time: 3.217  DataTime: 0.000    Err_G: 1.4200  Err_D: 0.3349  ErrL1: 0.1236	
+Epoch: [14][       6 /        6]	 Time: 4.061  DataTime: 0.002    Err_G: 1.2324  Err_D: 0.2807  ErrL1: 0.0910	
+End of epoch 14 / 200 	 Time Taken: 274.480	
+Epoch: [15][       0 /        6]	 Time: 70.985  DataTime: 0.008    Err_G: 2.3625  Err_D: 0.4424  ErrL1: 0.0508	
+Epoch: [15][       1 /        6]	 Time: 16.619  DataTime: 0.048    Err_G: 0.5601  Err_D: 0.5835  ErrL1: 0.0698	
+Epoch: [15][       2 /        6]	 Time: 5.814  DataTime: 0.060    Err_G: 2.4381  Err_D: 0.6652  ErrL1: 0.0510	
+Epoch: [15][       3 /        6]	 Time: 4.441  DataTime: 0.001    Err_G: 0.9621  Err_D: 0.4848  ErrL1: 0.0604	
+Epoch: [15][       4 /        6]	 Time: 5.100  DataTime: 0.000    Err_G: 1.3588  Err_D: 0.6072  ErrL1: 0.1270	
+Epoch: [15][       5 /        6]	 Time: 5.137  DataTime: 0.000    Err_G: 1.7042  Err_D: 0.5391  ErrL1: 0.0524	
+Epoch: [15][       6 /        6]	 Time: 4.508  DataTime: 0.000    Err_G: 1.6015  Err_D: 0.4384  ErrL1: 0.0602	
+End of epoch 15 / 200 	 Time Taken: 338.792	
+Epoch: [16][       0 /        6]	 Time: 51.010  DataTime: 0.025    Err_G: 1.1883  Err_D: 0.3648  ErrL1: 0.0537	
+Epoch: [16][       1 /        6]	 Time: 9.724  DataTime: 0.116    Err_G: 1.8978  Err_D: 0.3533  ErrL1: 0.0765	
+Epoch: [16][       2 /        6]	 Time: 5.498  DataTime: 0.018    Err_G: 0.9497  Err_D: 0.4208  ErrL1: 0.0640	
+Epoch: [16][       3 /        6]	 Time: 4.217  DataTime: 0.001    Err_G: 2.3188  Err_D: 0.3775  ErrL1: 0.0665	
+Epoch: [16][       4 /        6]	 Time: 3.408  DataTime: 0.000    Err_G: 1.7173  Err_D: 0.2640  ErrL1: 0.0775	
+Epoch: [16][       5 /        6]	 Time: 5.358  DataTime: 0.000    Err_G: 1.0130  Err_D: 0.3347  ErrL1: 0.0474	
+Epoch: [16][       6 /        6]	 Time: 4.524  DataTime: 0.000    Err_G: 2.1291  Err_D: 0.3050  ErrL1: 0.0473	
+End of epoch 16 / 200 	 Time Taken: 252.090	
+Epoch: [17][       0 /        6]	 Time: 68.926  DataTime: 0.025    Err_G: 1.6642  Err_D: 0.2423  ErrL1: 0.0605	
+Epoch: [17][       1 /        6]	 Time: 8.543  DataTime: 0.168    Err_G: 1.6016  Err_D: 0.2364  ErrL1: 0.0429	
+Epoch: [17][       2 /        6]	 Time: 4.001  DataTime: 0.031    Err_G: 1.8148  Err_D: 0.2664  ErrL1: 0.0440	
+Epoch: [17][       3 /        6]	 Time: 4.149  DataTime: 0.000    Err_G: 1.7240  Err_D: 0.2015  ErrL1: 0.0551	
+Epoch: [17][       4 /        6]	 Time: 2.983  DataTime: 0.000    Err_G: 2.0362  Err_D: 0.2264  ErrL1: 0.0397	
+Epoch: [17][       5 /        6]	 Time: 2.896  DataTime: 0.000    Err_G: 1.3165  Err_D: 0.2757  ErrL1: 0.0525	
+Epoch: [17][       6 /        6]	 Time: 2.865  DataTime: 0.000    Err_G: 2.4342  Err_D: 0.5311  ErrL1: 0.0434	
+End of epoch 17 / 200 	 Time Taken: 284.265	
+Epoch: [18][       0 /        6]	 Time: 67.237  DataTime: 0.026    Err_G: 1.0053  Err_D: 0.3741  ErrL1: 0.0466	
+Epoch: [18][       1 /        6]	 Time: 12.778  DataTime: 0.485    Err_G: 2.5808  Err_D: 0.3001  ErrL1: 0.0692	
+Epoch: [18][       2 /        6]	 Time: 5.362  DataTime: 0.000    Err_G: 0.8634  Err_D: 0.4145  ErrL1: 0.1039	
+Epoch: [18][       3 /        6]	 Time: 5.046  DataTime: 0.006    Err_G: 2.9320  Err_D: 0.4515  ErrL1: 0.0440	
+Epoch: [18][       4 /        6]	 Time: 4.992  DataTime: 0.012    Err_G: 1.1650  Err_D: 0.3125  ErrL1: 0.0708	
+Epoch: [18][       5 /        6]	 Time: 4.179  DataTime: 0.000    Err_G: 1.9640  Err_D: 0.3358  ErrL1: 0.0574	
+Epoch: [18][       6 /        6]	 Time: 2.919  DataTime: 0.000    Err_G: 1.3388  Err_D: 0.3808  ErrL1: 0.0488	
+End of epoch 18 / 200 	 Time Taken: 308.631	
+Epoch: [19][       0 /        6]	 Time: 59.834  DataTime: 0.044    Err_G: 1.7902  Err_D: 0.3094  ErrL1: 0.0490	
+Epoch: [19][       1 /        6]	 Time: 8.438  DataTime: 0.081    Err_G: 2.4384  Err_D: 0.3485  ErrL1: 0.0460	
+Epoch: [19][       2 /        6]	 Time: 6.210  DataTime: 0.001    Err_G: 0.9374  Err_D: 0.3608  ErrL1: 0.0459	
+Epoch: [19][       3 /        6]	 Time: 3.193  DataTime: 0.000    Err_G: 2.7165  Err_D: 0.4134  ErrL1: 0.0375	
+Epoch: [19][       4 /        6]	 Time: 3.888  DataTime: 0.046    Err_G: 0.6882  Err_D: 0.4794  ErrL1: 0.0621	
+Epoch: [19][       5 /        6]	 Time: 4.853  DataTime: 0.000    Err_G: 2.8940  Err_D: 0.3984  ErrL1: 0.0416	
+Epoch: [19][       6 /        6]	 Time: 4.613  DataTime: 0.001    Err_G: 1.5094  Err_D: 0.2767  ErrL1: 0.0404	
+End of epoch 19 / 200 	 Time Taken: 273.711	
+Epoch: [20][       0 /        6]	 Time: 59.290  DataTime: 0.008    Err_G: 1.5011  Err_D: 0.3139  ErrL1: 0.0404	
+Epoch: [20][       1 /        6]	 Time: 8.002  DataTime: 0.081    Err_G: 1.4520  Err_D: 0.2454  ErrL1: 0.0353	
+Epoch: [20][       2 /        6]	 Time: 5.999  DataTime: 0.018    Err_G: 2.3724  Err_D: 0.4644  ErrL1: 0.0412	
+Epoch: [20][       3 /        6]	 Time: 4.116  DataTime: 0.000    Err_G: 0.4192  Err_D: 0.7941  ErrL1: 0.0380	
+Epoch: [20][       4 /        6]	 Time: 3.966  DataTime: 0.027    Err_G: 2.3102  Err_D: 0.4632  ErrL1: 0.0436	
+Epoch: [20][       5 /        6]	 Time: 3.001  DataTime: 0.010    Err_G: 1.8461  Err_D: 0.3960  ErrL1: 0.0458	
+Epoch: [20][       6 /        6]	 Time: 2.894  DataTime: 0.013    Err_G: 0.6502  Err_D: 0.4922  ErrL1: 0.0374	
+End of epoch 20 / 200 	 Time Taken: 262.581	
+Epoch: [21][       0 /        6]	 Time: 67.320  DataTime: 0.033    Err_G: 2.2777  Err_D: 0.5439  ErrL1: 0.0382	
+Epoch: [21][       1 /        6]	 Time: 8.753  DataTime: 0.064    Err_G: 1.2874  Err_D: 0.2960  ErrL1: 0.0353	
+Epoch: [21][       2 /        6]	 Time: 6.110  DataTime: 0.027    Err_G: 0.9567  Err_D: 0.3686  ErrL1: 0.0359	
+Epoch: [21][       3 /        6]	 Time: 5.427  DataTime: 0.012    Err_G: 1.9593  Err_D: 0.4175  ErrL1: 0.0617	
+Epoch: [21][       4 /        6]	 Time: 3.093  DataTime: 0.009    Err_G: 1.1683  Err_D: 0.4144  ErrL1: 0.0325	
+Epoch: [21][       5 /        6]	 Time: 4.660  DataTime: 0.013    Err_G: 1.8575  Err_D: 0.3217  ErrL1: 0.0576	
+Epoch: [21][       6 /        6]	 Time: 4.673  DataTime: 0.000    Err_G: 1.6372  Err_D: 0.2942  ErrL1: 0.0321	
+End of epoch 21 / 200 	 Time Taken: 301.285	
+Epoch: [22][       0 /        6]	 Time: 59.103  DataTime: 0.024    Err_G: 1.1066  Err_D: 0.3183  ErrL1: 0.0398	
+Epoch: [22][       1 /        6]	 Time: 11.930  DataTime: 0.234    Err_G: 2.2588  Err_D: 0.2249  ErrL1: 0.0721	
+Epoch: [22][       2 /        6]	 Time: 3.367  DataTime: 0.030    Err_G: 1.8166  Err_D: 0.2355  ErrL1: 0.0445	
+Epoch: [22][       3 /        6]	 Time: 3.514  DataTime: 0.000    Err_G: 1.4973  Err_D: 0.2569  ErrL1: 0.0317	
+Epoch: [22][       4 /        6]	 Time: 3.386  DataTime: 0.000    Err_G: 1.7481  Err_D: 0.2075  ErrL1: 0.0580	
+Epoch: [22][       5 /        6]	 Time: 3.839  DataTime: 0.000    Err_G: 1.9245  Err_D: 0.2619  ErrL1: 0.0344	
+Epoch: [22][       6 /        6]	 Time: 3.757  DataTime: 0.000    Err_G: 1.6474  Err_D: 0.2486  ErrL1: 0.0337	
+End of epoch 22 / 200 	 Time Taken: 267.659	
+Epoch: [23][       0 /        6]	 Time: 79.520  DataTime: 0.032    Err_G: 1.4893  Err_D: 0.2155  ErrL1: 0.0361	
+Epoch: [23][       1 /        6]	 Time: 10.184  DataTime: 0.270    Err_G: 2.2810  Err_D: 0.5597  ErrL1: 0.0310	
+Epoch: [23][       2 /        6]	 Time: 5.399  DataTime: 0.032    Err_G: 0.0994  Err_D: 1.3319  ErrL1: 0.0357	
+Epoch: [23][       3 /        6]	 Time: 3.581  DataTime: 0.001    Err_G: 2.5915  Err_D: 0.6196  ErrL1: 0.0438	
+Epoch: [23][       4 /        6]	 Time: 3.803  DataTime: 0.000    Err_G: 1.9734  Err_D: 0.6940  ErrL1: 0.0928	
+Epoch: [23][       5 /        6]	 Time: 5.034  DataTime: 0.000    Err_G: 1.2136  Err_D: 1.0952  ErrL1: 0.0334	
+Epoch: [23][       6 /        6]	 Time: 5.860  DataTime: 0.004    Err_G: 1.6313  Err_D: 0.9083  ErrL1: 0.0433	
+End of epoch 23 / 200 	 Time Taken: 341.609	
+Epoch: [24][       0 /        6]	 Time: 56.505  DataTime: 0.065    Err_G: 2.1867  Err_D: 0.5406  ErrL1: 0.0310	
+Epoch: [24][       1 /        6]	 Time: 10.173  DataTime: 0.375    Err_G: 1.0681  Err_D: 0.4465  ErrL1: 0.0288	
+Epoch: [24][       2 /        6]	 Time: 7.198  DataTime: 0.042    Err_G: 1.0897  Err_D: 0.4058  ErrL1: 0.0308	
+Epoch: [24][       3 /        6]	 Time: 4.087  DataTime: 0.001    Err_G: 2.0417  Err_D: 0.5148  ErrL1: 0.0356	
+Epoch: [24][       4 /        6]	 Time: 4.967  DataTime: 0.000    Err_G: 1.7378  Err_D: 0.4406  ErrL1: 0.0273	
+Epoch: [24][       5 /        6]	 Time: 4.319  DataTime: 0.000    Err_G: 0.7840  Err_D: 0.4398  ErrL1: 0.0351	
+Epoch: [24][       6 /        6]	 Time: 4.435  DataTime: 0.000    Err_G: 1.3641  Err_D: 0.3659  ErrL1: 0.0307	
+End of epoch 24 / 200 	 Time Taken: 275.976	
+Epoch: [25][       0 /        6]	 Time: 54.142  DataTime: 0.017    Err_G: 1.7859  Err_D: 0.3182  ErrL1: 0.0511	
+Epoch: [25][       1 /        6]	 Time: 8.005  DataTime: 0.139    Err_G: 1.5548  Err_D: 0.2282  ErrL1: 0.0349	
+Epoch: [25][       2 /        6]	 Time: 5.011  DataTime: 0.007    Err_G: 1.2913  Err_D: 0.2617  ErrL1: 0.0502	
+Epoch: [25][       3 /        6]	 Time: 3.568  DataTime: 0.000    Err_G: 2.6364  Err_D: 0.4452  ErrL1: 0.0348	
+Epoch: [25][       4 /        6]	 Time: 3.195  DataTime: 0.000    Err_G: 1.1961  Err_D: 0.3052  ErrL1: 0.0235	
+Epoch: [25][       5 /        6]	 Time: 2.902  DataTime: 0.005    Err_G: 1.1665  Err_D: 0.2820  ErrL1: 0.0295	
+Epoch: [25][       6 /        6]	 Time: 2.878  DataTime: 0.000    Err_G: 1.9880  Err_D: 0.3221  ErrL1: 0.0257	
+End of epoch 25 / 200 	 Time Taken: 239.853	
+Epoch: [26][       0 /        6]	 Time: 72.402  DataTime: 0.008    Err_G: 1.2814  Err_D: 0.2945  ErrL1: 0.0313	
+Epoch: [26][       1 /        6]	 Time: 15.023  DataTime: 0.183    Err_G: 1.9580  Err_D: 0.3048  ErrL1: 0.0300	
+Epoch: [26][       2 /        6]	 Time: 6.522  DataTime: 0.013    Err_G: 0.5840  Err_D: 0.4769  ErrL1: 0.0296	
+Epoch: [26][       3 /        6]	 Time: 4.518  DataTime: 0.000    Err_G: 3.0477  Err_D: 1.0119  ErrL1: 0.0274	
+Epoch: [26][       4 /        6]	 Time: 4.410  DataTime: 0.000    Err_G: 1.0421  Err_D: 0.4148  ErrL1: 0.0302	
+Epoch: [26][       5 /        6]	 Time: 3.915  DataTime: 0.051    Err_G: 0.8003  Err_D: 0.4118  ErrL1: 0.0363	
+Epoch: [26][       6 /        6]	 Time: 3.205  DataTime: 0.001    Err_G: 2.1090  Err_D: 0.5996  ErrL1: 0.0351	
+End of epoch 26 / 200 	 Time Taken: 331.440	
+Epoch: [27][       0 /        6]	 Time: 63.049  DataTime: 0.028    Err_G: 0.5391  Err_D: 0.6639  ErrL1: 0.0338	
+Epoch: [27][       1 /        6]	 Time: 11.065  DataTime: 0.279    Err_G: 2.0708  Err_D: 0.4630  ErrL1: 0.0292	
+Epoch: [27][       2 /        6]	 Time: 5.265  DataTime: 0.035    Err_G: 0.9213  Err_D: 0.5673  ErrL1: 0.0254	
+Epoch: [27][       3 /        6]	 Time: 5.891  DataTime: 0.000    Err_G: 0.8240  Err_D: 0.4707  ErrL1: 0.0595	
+Epoch: [27][       4 /        6]	 Time: 4.799  DataTime: 0.000    Err_G: 1.9819  Err_D: 0.4444  ErrL1: 0.0356	
+Epoch: [27][       5 /        6]	 Time: 3.010  DataTime: 0.001    Err_G: 1.1513  Err_D: 0.5630  ErrL1: 0.0258	
+Epoch: [27][       6 /        6]	 Time: 2.883  DataTime: 0.001    Err_G: 0.7622  Err_D: 0.6027  ErrL1: 0.0267	
+End of epoch 27 / 200 	 Time Taken: 290.986	
+Epoch: [28][       0 /        6]	 Time: 65.786  DataTime: 0.024    Err_G: 1.1804  Err_D: 0.4991  ErrL1: 0.0250	
+Epoch: [28][       1 /        6]	 Time: 12.778  DataTime: 0.257    Err_G: 0.8590  Err_D: 0.4407  ErrL1: 0.0373	
+Epoch: [28][       2 /        6]	 Time: 4.190  DataTime: 0.011    Err_G: 2.4825  Err_D: 0.7079  ErrL1: 0.0270	
+Epoch: [28][       3 /        6]	 Time: 3.360  DataTime: 0.000    Err_G: 0.3450  Err_D: 0.7458  ErrL1: 0.0306	
+Epoch: [28][       4 /        6]	 Time: 4.266  DataTime: 0.000    Err_G: 2.0984  Err_D: 0.5741  ErrL1: 0.0239	
+Epoch: [28][       5 /        6]	 Time: 4.457  DataTime: 0.008    Err_G: 0.6665  Err_D: 0.6152  ErrL1: 0.0220	
+Epoch: [28][       6 /        6]	 Time: 4.176  DataTime: 0.003    Err_G: 1.1154  Err_D: 0.5491  ErrL1: 0.0259	
+End of epoch 28 / 200 	 Time Taken: 298.764	
+Epoch: [29][       0 /        6]	 Time: 67.199  DataTime: 0.025    Err_G: 1.1562  Err_D: 0.4856  ErrL1: 0.0511	
+Epoch: [29][       1 /        6]	 Time: 9.016  DataTime: 0.225    Err_G: 0.9114  Err_D: 0.6921  ErrL1: 0.0268	
+Epoch: [29][       2 /        6]	 Time: 5.455  DataTime: 0.007    Err_G: 1.1046  Err_D: 0.4450  ErrL1: 0.0454	
+Epoch: [29][       3 /        6]	 Time: 5.094  DataTime: 0.000    Err_G: 1.0948  Err_D: 0.5951  ErrL1: 0.0239	
+Epoch: [29][       4 /        6]	 Time: 5.092  DataTime: 0.002    Err_G: 0.4960  Err_D: 0.7547  ErrL1: 0.0248	
+Epoch: [29][       5 /        6]	 Time: 4.751  DataTime: 0.000    Err_G: 1.7852  Err_D: 0.7774  ErrL1: 0.0251	
+Epoch: [29][       6 /        6]	 Time: 4.529  DataTime: 0.000    Err_G: 0.5671  Err_D: 0.6338  ErrL1: 0.0346	
+End of epoch 29 / 200 	 Time Taken: 304.718	
+Epoch: [30][       0 /        6]	 Time: 78.307  DataTime: 0.022    Err_G: 0.7605  Err_D: 0.6025  ErrL1: 0.0263	
+Epoch: [30][       1 /        6]	 Time: 8.683  DataTime: 0.151    Err_G: 1.1469  Err_D: 0.6153  ErrL1: 0.0280	
+Epoch: [30][       2 /        6]	 Time: 3.634  DataTime: 0.000    Err_G: 0.9347  Err_D: 0.6114  ErrL1: 0.0283	
+Epoch: [30][       3 /        6]	 Time: 3.065  DataTime: 0.104    Err_G: 0.4210  Err_D: 0.7679  ErrL1: 0.0228	
+Epoch: [30][       4 /        6]	 Time: 3.173  DataTime: 0.000    Err_G: 1.3651  Err_D: 0.8508  ErrL1: 0.0253	
+Epoch: [30][       5 /        6]	 Time: 3.499  DataTime: 0.000    Err_G: 0.3820  Err_D: 0.7517  ErrL1: 0.0233	
+Epoch: [30][       6 /        6]	 Time: 4.503  DataTime: 0.000    Err_G: 1.6486  Err_D: 0.7402  ErrL1: 0.0217	
+End of epoch 30 / 200 	 Time Taken: 315.666	
+Epoch: [31][       0 /        6]	 Time: 67.287  DataTime: 0.011    Err_G: 0.8443  Err_D: 0.6516  ErrL1: 0.0217	
+Epoch: [31][       1 /        6]	 Time: 23.886  DataTime: 0.162    Err_G: 0.3131  Err_D: 0.8968  ErrL1: 0.0474	
+Epoch: [31][       2 /        6]	 Time: 4.448  DataTime: 0.006    Err_G: 1.8298  Err_D: 0.5012  ErrL1: 0.0401	
+Epoch: [31][       3 /        6]	 Time: 3.528  DataTime: 0.000    Err_G: 1.5483  Err_D: 0.8030  ErrL1: 0.0217	
+Epoch: [31][       4 /        6]	 Time: 4.372  DataTime: 0.001    Err_G: 0.3231  Err_D: 0.8329  ErrL1: 0.0238	
+Epoch: [31][       5 /        6]	 Time: 5.690  DataTime: 0.002    Err_G: 0.9449  Err_D: 0.6397  ErrL1: 0.0218	
+Epoch: [31][       6 /        6]	 Time: 3.929  DataTime: 0.008    Err_G: 0.8570  Err_D: 0.6460  ErrL1: 0.0232	
+End of epoch 31 / 200 	 Time Taken: 341.168	
+Epoch: [32][       0 /        6]	 Time: 62.616  DataTime: 0.031    Err_G: 0.9060  Err_D: 0.6677  ErrL1: 0.0211	
+Epoch: [32][       1 /        6]	 Time: 10.312  DataTime: 0.163    Err_G: 0.6483  Err_D: 0.6732  ErrL1: 0.0182	
+Epoch: [32][       2 /        6]	 Time: 3.287  DataTime: 0.000    Err_G: 0.8712  Err_D: 0.5286  ErrL1: 0.0276	
+Epoch: [32][       3 /        6]	 Time: 3.380  DataTime: 0.000    Err_G: 0.9191  Err_D: 0.6112  ErrL1: 0.0224	
+Epoch: [32][       4 /        6]	 Time: 3.757  DataTime: 0.000    Err_G: 0.7426  Err_D: 0.6036  ErrL1: 0.0229	
+Epoch: [32][       5 /        6]	 Time: 4.224  DataTime: 0.005    Err_G: 0.9890  Err_D: 0.5979  ErrL1: 0.0213	
+Epoch: [32][       6 /        6]	 Time: 4.074  DataTime: 0.000    Err_G: 0.6166  Err_D: 0.6581  ErrL1: 0.0198	
+End of epoch 32 / 200 	 Time Taken: 275.625	
+Epoch: [33][       0 /        6]	 Time: 65.343  DataTime: 0.023    Err_G: 1.0260  Err_D: 0.5568  ErrL1: 0.0328	
+Epoch: [33][       1 /        6]	 Time: 10.789  DataTime: 0.279    Err_G: 1.1302  Err_D: 0.6964  ErrL1: 0.0246	
+Epoch: [33][       2 /        6]	 Time: 5.286  DataTime: 0.032    Err_G: 0.2212  Err_D: 0.9627  ErrL1: 0.0196	
+Epoch: [33][       3 /        6]	 Time: 3.488  DataTime: 0.003    Err_G: 1.9590  Err_D: 0.9113  ErrL1: 0.0375	
+Epoch: [33][       4 /        6]	 Time: 4.119  DataTime: 0.000    Err_G: 1.1098  Err_D: 0.7115  ErrL1: 0.0185	
+Epoch: [33][       5 /        6]	 Time: 4.388  DataTime: 0.002    Err_G: 0.2011  Err_D: 1.0133  ErrL1: 0.0218	
+Epoch: [33][       6 /        6]	 Time: 4.037  DataTime: 0.000    Err_G: 0.9679  Err_D: 0.7184  ErrL1: 0.0206	
+End of epoch 33 / 200 	 Time Taken: 293.667	
+Epoch: [34][       0 /        6]	 Time: 68.568  DataTime: 0.054    Err_G: 0.9534  Err_D: 0.7386  ErrL1: 0.0193	
+Epoch: [34][       1 /        6]	 Time: 7.363  DataTime: 0.266    Err_G: 0.5685  Err_D: 0.7562  ErrL1: 0.0210	
+Epoch: [34][       2 /        6]	 Time: 4.314  DataTime: 0.048    Err_G: 0.7663  Err_D: 0.5644  ErrL1: 0.0314	
+Epoch: [34][       3 /        6]	 Time: 3.095  DataTime: 0.001    Err_G: 0.9874  Err_D: 0.6656  ErrL1: 0.0219	
+Epoch: [34][       4 /        6]	 Time: 3.209  DataTime: 0.000    Err_G: 0.8476  Err_D: 0.6619  ErrL1: 0.0179	
+Epoch: [34][       5 /        6]	 Time: 4.167  DataTime: 0.000    Err_G: 0.6059  Err_D: 0.6114  ErrL1: 0.0498	
+Epoch: [34][       6 /        6]	 Time: 4.590  DataTime: 0.000    Err_G: 0.8168  Err_D: 0.6992  ErrL1: 0.0229	
+End of epoch 34 / 200 	 Time Taken: 286.844	
+Epoch: [35][       0 /        6]	 Time: 53.052  DataTime: 0.043    Err_G: 0.9259  Err_D: 0.5966  ErrL1: 0.0233	
+Epoch: [35][       1 /        6]	 Time: 9.873  DataTime: 0.138    Err_G: 0.9663  Err_D: 0.4413  ErrL1: 0.0287	
+Epoch: [35][       2 /        6]	 Time: 5.871  DataTime: 0.007    Err_G: 0.8209  Err_D: 0.5036  ErrL1: 0.0292	
+Epoch: [35][       3 /        6]	 Time: 4.319  DataTime: 0.000    Err_G: 1.5701  Err_D: 0.8121  ErrL1: 0.0197	
+Epoch: [35][       4 /        6]	 Time: 4.190  DataTime: 0.000    Err_G: 0.5687  Err_D: 0.6328  ErrL1: 0.0348	
+Epoch: [35][       5 /        6]	 Time: 4.685  DataTime: 0.001    Err_G: 0.9380  Err_D: 0.6714  ErrL1: 0.0218	
+Epoch: [35][       6 /        6]	 Time: 4.405  DataTime: 0.018    Err_G: 0.8234  Err_D: 0.6468  ErrL1: 0.0223	
+End of epoch 35 / 200 	 Time Taken: 260.871	
+Epoch: [36][       0 /        6]	 Time: 60.263  DataTime: 0.032    Err_G: 1.0378  Err_D: 0.6007  ErrL1: 0.0178	
+Epoch: [36][       1 /        6]	 Time: 7.377  DataTime: 0.108    Err_G: 0.8882  Err_D: 0.4948  ErrL1: 0.0358	
+Epoch: [36][       2 /        6]	 Time: 4.837  DataTime: 0.022    Err_G: 0.9232  Err_D: 0.6183  ErrL1: 0.0497	
+Epoch: [36][       3 /        6]	 Time: 3.401  DataTime: 0.027    Err_G: 0.5998  Err_D: 0.6297  ErrL1: 0.0618	
+Epoch: [36][       4 /        6]	 Time: 3.217  DataTime: 0.000    Err_G: 1.1364  Err_D: 0.4868  ErrL1: 0.0819	
+Epoch: [36][       5 /        6]	 Time: 3.542  DataTime: 0.000    Err_G: 1.2303  Err_D: 0.4806  ErrL1: 0.1066	
+Epoch: [36][       6 /        6]	 Time: 4.071  DataTime: 0.000    Err_G: 1.2501  Err_D: 0.3996  ErrL1: 0.0523	
+End of epoch 36 / 200 	 Time Taken: 261.087	
+Epoch: [37][       0 /        6]	 Time: 65.241  DataTime: 0.037    Err_G: 0.9532  Err_D: 0.4473  ErrL1: 0.0226	
+Epoch: [37][       1 /        6]	 Time: 9.587  DataTime: 0.207    Err_G: 0.8228  Err_D: 0.5646  ErrL1: 0.0374	
+Epoch: [37][       2 /        6]	 Time: 4.857  DataTime: 0.000    Err_G: 1.2579  Err_D: 0.7236  ErrL1: 0.0261	
+Epoch: [37][       3 /        6]	 Time: 4.749  DataTime: 0.009    Err_G: 0.2662  Err_D: 0.8703  ErrL1: 0.0261	
+Epoch: [37][       4 /        6]	 Time: 3.522  DataTime: 0.013    Err_G: 2.1184  Err_D: 0.8552  ErrL1: 0.0218	
+Epoch: [37][       5 /        6]	 Time: 4.922  DataTime: 0.001    Err_G: 0.8466  Err_D: 0.5349  ErrL1: 0.0306	
+Epoch: [37][       6 /        6]	 Time: 4.305  DataTime: 0.001    Err_G: 0.6974  Err_D: 0.5599  ErrL1: 0.0309	
+End of epoch 37 / 200 	 Time Taken: 293.491	
+Epoch: [38][       0 /        6]	 Time: 70.801  DataTime: 0.013    Err_G: 0.8800  Err_D: 0.6651  ErrL1: 0.0195	
+Epoch: [38][       1 /        6]	 Time: 12.376  DataTime: 0.228    Err_G: 1.4042  Err_D: 0.5420  ErrL1: 0.0800	
+Epoch: [38][       2 /        6]	 Time: 5.589  DataTime: 0.016    Err_G: 0.6332  Err_D: 0.6476  ErrL1: 0.0199	
+Epoch: [38][       3 /        6]	 Time: 5.228  DataTime: 0.027    Err_G: 0.7166  Err_D: 0.5584  ErrL1: 0.0237	
+Epoch: [38][       4 /        6]	 Time: 4.035  DataTime: 0.014    Err_G: 1.2415  Err_D: 0.7033  ErrL1: 0.0258	
+Epoch: [38][       5 /        6]	 Time: 4.755  DataTime: 0.000    Err_G: 0.5520  Err_D: 0.6468  ErrL1: 0.0262	
+Epoch: [38][       6 /        6]	 Time: 4.549  DataTime: 0.000    Err_G: 1.3261  Err_D: 0.4684  ErrL1: 0.0277	
+End of epoch 38 / 200 	 Time Taken: 323.393	
+Epoch: [39][       0 /        6]	 Time: 57.627  DataTime: 0.034    Err_G: 0.7751  Err_D: 0.6790  ErrL1: 0.0190	
+Epoch: [39][       1 /        6]	 Time: 8.820  DataTime: 0.193    Err_G: 0.6897  Err_D: 0.4786  ErrL1: 0.0262	
+Epoch: [39][       2 /        6]	 Time: 6.466  DataTime: 0.007    Err_G: 1.6269  Err_D: 0.7443  ErrL1: 0.0241	
+Epoch: [39][       3 /        6]	 Time: 5.020  DataTime: 0.006    Err_G: 0.7805  Err_D: 0.6093  ErrL1: 0.0505	
+Epoch: [39][       4 /        6]	 Time: 4.372  DataTime: 0.000    Err_G: 0.4023  Err_D: 0.7529  ErrL1: 0.0313	
+Epoch: [39][       5 /        6]	 Time: 4.651  DataTime: 0.000    Err_G: 1.9976  Err_D: 1.0276  ErrL1: 0.0173	
+Epoch: [39][       6 /        6]	 Time: 4.651  DataTime: 0.000    Err_G: 0.7183  Err_D: 0.6501  ErrL1: 0.0183	
+End of epoch 39 / 200 	 Time Taken: 275.905	
+Epoch: [40][       0 /        6]	 Time: 62.568  DataTime: 0.044    Err_G: 0.3214  Err_D: 0.8305  ErrL1: 0.0435	
+Epoch: [40][       1 /        6]	 Time: 10.456  DataTime: 0.134    Err_G: 1.2321  Err_D: 0.8526  ErrL1: 0.0202	
+Epoch: [40][       2 /        6]	 Time: 5.140  DataTime: 0.011    Err_G: 0.8151  Err_D: 0.7218  ErrL1: 0.0293	
+Epoch: [40][       3 /        6]	 Time: 3.626  DataTime: 0.001    Err_G: 0.7742  Err_D: 0.6290  ErrL1: 0.0190	
+Epoch: [40][       4 /        6]	 Time: 3.284  DataTime: 0.000    Err_G: 0.6713  Err_D: 0.6849  ErrL1: 0.0202	
+Epoch: [40][       5 /        6]	 Time: 3.660  DataTime: 0.000    Err_G: 0.8232  Err_D: 0.7109  ErrL1: 0.0213	
+Epoch: [40][       6 /        6]	 Time: 4.714  DataTime: 0.001    Err_G: 0.6971  Err_D: 0.6320  ErrL1: 0.0430	
+End of epoch 40 / 200 	 Time Taken: 281.585	
+Epoch: [41][       0 /        6]	 Time: 57.163  DataTime: 0.042    Err_G: 1.1072  Err_D: 0.6922  ErrL1: 0.0184	
+Epoch: [41][       1 /        6]	 Time: 9.605  DataTime: 0.074    Err_G: 1.1037  Err_D: 0.6556  ErrL1: 0.0227	
+Epoch: [41][       2 /        6]	 Time: 5.847  DataTime: 0.037    Err_G: 0.8263  Err_D: 0.5308  ErrL1: 0.0182	
+Epoch: [41][       3 /        6]	 Time: 4.254  DataTime: 0.000    Err_G: 0.8438  Err_D: 0.5669  ErrL1: 0.0254	
+Epoch: [41][       4 /        6]	 Time: 3.971  DataTime: 0.000    Err_G: 1.1806  Err_D: 0.6158  ErrL1: 0.0183	
+Epoch: [41][       5 /        6]	 Time: 4.266  DataTime: 0.000    Err_G: 0.8953  Err_D: 0.5641  ErrL1: 0.0192	
+Epoch: [41][       6 /        6]	 Time: 4.760  DataTime: 0.003    Err_G: 0.7011  Err_D: 0.5010  ErrL1: 0.0350	
+End of epoch 41 / 200 	 Time Taken: 271.253	
+Epoch: [42][       0 /        6]	 Time: 58.907  DataTime: 0.071    Err_G: 1.1457  Err_D: 0.5711  ErrL1: 0.0486	
+Epoch: [42][       1 /        6]	 Time: 8.593  DataTime: 0.052    Err_G: 1.1065  Err_D: 0.5143  ErrL1: 0.0184	
+Epoch: [42][       2 /        6]	 Time: 4.406  DataTime: 0.028    Err_G: 0.6822  Err_D: 0.5795  ErrL1: 0.0184	
+Epoch: [42][       3 /        6]	 Time: 3.051  DataTime: 0.000    Err_G: 1.6653  Err_D: 0.7367  ErrL1: 0.0253	
+Epoch: [42][       4 /        6]	 Time: 3.500  DataTime: 0.000    Err_G: 0.3104  Err_D: 0.8069  ErrL1: 0.0397	
+Epoch: [42][       5 /        6]	 Time: 3.463  DataTime: 0.006    Err_G: 1.0936  Err_D: 0.7122  ErrL1: 0.0166	
+Epoch: [42][       6 /        6]	 Time: 4.448  DataTime: 0.014    Err_G: 1.2485  Err_D: 0.5801  ErrL1: 0.0234	
+End of epoch 42 / 200 	 Time Taken: 259.950	
+Epoch: [43][       0 /        6]	 Time: 59.269  DataTime: 0.008    Err_G: 0.7393  Err_D: 0.5507  ErrL1: 0.0227	
+Epoch: [43][       1 /        6]	 Time: 9.179  DataTime: 0.182    Err_G: 0.8649  Err_D: 0.6899  ErrL1: 0.0225	
+Epoch: [43][       2 /        6]	 Time: 4.677  DataTime: 0.022    Err_G: 0.9231  Err_D: 0.5385  ErrL1: 0.0171	
+Epoch: [43][       3 /        6]	 Time: 4.468  DataTime: 0.000    Err_G: 0.7564  Err_D: 0.6676  ErrL1: 0.0239	
+Epoch: [43][       4 /        6]	 Time: 4.048  DataTime: 0.001    Err_G: 0.7016  Err_D: 0.5670  ErrL1: 0.0205	
+Epoch: [43][       5 /        6]	 Time: 7.181  DataTime: 0.024    Err_G: 1.5783  Err_D: 0.6903  ErrL1: 0.0167	
+Epoch: [43][       6 /        6]	 Time: 4.838  DataTime: 0.000    Err_G: 0.5853  Err_D: 0.6050  ErrL1: 0.0189	
+End of epoch 43 / 200 	 Time Taken: 282.165	
+Epoch: [44][       0 /        6]	 Time: 60.124  DataTime: 0.029    Err_G: 0.8848  Err_D: 0.6397  ErrL1: 0.0276	
+Epoch: [44][       1 /        6]	 Time: 12.148  DataTime: 0.098    Err_G: 0.8655  Err_D: 0.6299  ErrL1: 0.0155	
+Epoch: [44][       2 /        6]	 Time: 4.597  DataTime: 0.001    Err_G: 0.5743  Err_D: 0.6331  ErrL1: 0.0194	
+Epoch: [44][       3 /        6]	 Time: 4.717  DataTime: 0.000    Err_G: 1.2056  Err_D: 0.4576  ErrL1: 0.0221	
+Epoch: [44][       4 /        6]	 Time: 5.235  DataTime: 0.000    Err_G: 1.4755  Err_D: 0.6268  ErrL1: 0.0174	
+Epoch: [44][       5 /        6]	 Time: 4.210  DataTime: 0.024    Err_G: 0.3707  Err_D: 0.7062  ErrL1: 0.0208	
+Epoch: [44][       6 /        6]	 Time: 4.393  DataTime: 0.000    Err_G: 1.1052  Err_D: 0.7146  ErrL1: 0.0165	
+End of epoch 44 / 200 	 Time Taken: 287.635	
+Epoch: [45][       0 /        6]	 Time: 60.248  DataTime: 0.154    Err_G: 0.5612  Err_D: 0.6101  ErrL1: 0.0648	
+Epoch: [45][       1 /        6]	 Time: 8.711  DataTime: 0.104    Err_G: 1.7924  Err_D: 0.9184  ErrL1: 0.0200	
+Epoch: [45][       2 /        6]	 Time: 7.220  DataTime: 0.013    Err_G: 0.6387  Err_D: 0.5830  ErrL1: 0.0195	
+Epoch: [45][       3 /        6]	 Time: 4.979  DataTime: 0.014    Err_G: 0.8683  Err_D: 0.6922  ErrL1: 0.0162	
+Epoch: [45][       4 /        6]	 Time: 5.770  DataTime: 0.014    Err_G: 0.4946  Err_D: 0.6241  ErrL1: 0.0248	
+Epoch: [45][       5 /        6]	 Time: 4.653  DataTime: 0.004    Err_G: 1.4676  Err_D: 0.7463  ErrL1: 0.0157	
+Epoch: [45][       6 /        6]	 Time: 3.380  DataTime: 0.000    Err_G: 1.1761  Err_D: 0.3840  ErrL1: 0.0372	
+End of epoch 45 / 200 	 Time Taken: 286.343	
+Epoch: [46][       0 /        6]	 Time: 66.837  DataTime: 0.060    Err_G: 0.5653  Err_D: 0.6267  ErrL1: 0.0459	
+Epoch: [46][       1 /        6]	 Time: 9.312  DataTime: 0.084    Err_G: 1.4297  Err_D: 0.8042  ErrL1: 0.0156	
+Epoch: [46][       2 /        6]	 Time: 5.692  DataTime: 0.014    Err_G: 0.5780  Err_D: 0.6013  ErrL1: 0.0162	
+Epoch: [46][       3 /        6]	 Time: 3.339  DataTime: 0.000    Err_G: 0.8432  Err_D: 0.6419  ErrL1: 0.0152	
+Epoch: [46][       4 /        6]	 Time: 3.231  DataTime: 0.000    Err_G: 0.8455  Err_D: 0.7774  ErrL1: 0.0167	
+Epoch: [46][       5 /        6]	 Time: 3.040  DataTime: 0.000    Err_G: 0.4567  Err_D: 0.8608  ErrL1: 0.0171	
+Epoch: [46][       6 /        6]	 Time: 3.845  DataTime: 0.001    Err_G: 1.0837  Err_D: 0.7983  ErrL1: 0.0162	
+End of epoch 46 / 200 	 Time Taken: 287.036	
+Epoch: [47][       0 /        6]	 Time: 69.892  DataTime: 0.078    Err_G: 0.6357  Err_D: 0.8154  ErrL1: 0.0156	
+Epoch: [47][       1 /        6]	 Time: 8.611  DataTime: 0.130    Err_G: 0.5583  Err_D: 0.7302  ErrL1: 0.0182	
+Epoch: [47][       2 /        6]	 Time: 6.029  DataTime: 0.014    Err_G: 0.6642  Err_D: 0.8378  ErrL1: 0.0163	
+Epoch: [47][       3 /        6]	 Time: 4.484  DataTime: 0.000    Err_G: 0.8672  Err_D: 0.8048  ErrL1: 0.0157	
+Epoch: [47][       4 /        6]	 Time: 5.136  DataTime: 0.000    Err_G: 0.5531  Err_D: 0.8068  ErrL1: 0.0155	
+Epoch: [47][       5 /        6]	 Time: 4.224  DataTime: 0.009    Err_G: 0.6514  Err_D: 0.7638  ErrL1: 0.0185	
+Epoch: [47][       6 /        6]	 Time: 3.840  DataTime: 0.001    Err_G: 1.1376  Err_D: 0.9101  ErrL1: 0.0138	
+End of epoch 47 / 200 	 Time Taken: 307.930	
+Epoch: [48][       0 /        6]	 Time: 52.282  DataTime: 0.070    Err_G: 0.8696  Err_D: 0.7404  ErrL1: 0.0152	
+Epoch: [48][       1 /        6]	 Time: 11.219  DataTime: 0.185    Err_G: 0.4262  Err_D: 0.7422  ErrL1: 0.0180	
+Epoch: [48][       2 /        6]	 Time: 8.485  DataTime: 0.000    Err_G: 0.7545  Err_D: 0.7287  ErrL1: 0.0144	
+Epoch: [48][       3 /        6]	 Time: 4.236  DataTime: 0.034    Err_G: 1.0391  Err_D: 0.7641  ErrL1: 0.0136	
+Epoch: [48][       4 /        6]	 Time: 4.476  DataTime: 0.000    Err_G: 0.7995  Err_D: 0.6518  ErrL1: 0.0137	
+Epoch: [48][       5 /        6]	 Time: 4.160  DataTime: 0.000    Err_G: 0.7207  Err_D: 0.5495  ErrL1: 0.0182	
+Epoch: [48][       6 /        6]	 Time: 5.575  DataTime: 0.001    Err_G: 0.9046  Err_D: 0.6527  ErrL1: 0.0141	
+End of epoch 48 / 200 	 Time Taken: 273.481	
+Epoch: [49][       0 /        6]	 Time: 63.576  DataTime: 0.031    Err_G: 0.7378  Err_D: 0.6258  ErrL1: 0.0215	
+Epoch: [49][       1 /        6]	 Time: 11.486  DataTime: 0.278    Err_G: 0.9231  Err_D: 0.5746  ErrL1: 0.0141	
+Epoch: [49][       2 /        6]	 Time: 4.785  DataTime: 0.029    Err_G: 0.9650  Err_D: 0.5760  ErrL1: 0.0143	
+Epoch: [49][       3 /        6]	 Time: 3.970  DataTime: 0.024    Err_G: 0.8937  Err_D: 0.5853  ErrL1: 0.0137	
+Epoch: [49][       4 /        6]	 Time: 4.610  DataTime: 0.001    Err_G: 0.5260  Err_D: 0.6643  ErrL1: 0.0130	
+Epoch: [49][       5 /        6]	 Time: 4.563  DataTime: 0.000    Err_G: 1.1608  Err_D: 0.6839  ErrL1: 0.0138	
+Epoch: [49][       6 /        6]	 Time: 4.718  DataTime: 0.039    Err_G: 0.8211  Err_D: 0.6095  ErrL1: 0.0123	
+End of epoch 49 / 200 	 Time Taken: 295.528	
+Epoch: [50][       0 /        6]	 Time: 59.080  DataTime: 0.001    Err_G: 0.5454  Err_D: 0.6443  ErrL1: 0.0124	
+Epoch: [50][       1 /        6]	 Time: 7.046  DataTime: 0.131    Err_G: 0.9671  Err_D: 0.6212  ErrL1: 0.0166	
+Epoch: [50][       2 /        6]	 Time: 5.132  DataTime: 0.033    Err_G: 1.1383  Err_D: 0.7604  ErrL1: 0.0160	
+Epoch: [50][       3 /        6]	 Time: 4.279  DataTime: 0.006    Err_G: 0.4321  Err_D: 0.7328  ErrL1: 0.0144	
+Epoch: [50][       4 /        6]	 Time: 4.232  DataTime: 0.000    Err_G: 0.9162  Err_D: 0.7554  ErrL1: 0.0126	
+Epoch: [50][       5 /        6]	 Time: 4.105  DataTime: 0.000    Err_G: 0.5935  Err_D: 0.6268  ErrL1: 0.0167	
+Epoch: [50][       6 /        6]	 Time: 7.005  DataTime: 0.000    Err_G: 1.2627  Err_D: 0.7654  ErrL1: 0.0128	
+End of epoch 50 / 200 	 Time Taken: 284.934	
+Killed
+
